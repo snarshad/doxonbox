@@ -163,15 +163,28 @@
     }];
 }
 
+#pragma mark DXBoxBrowserTableViewControllerDelegate
+- (void)fileSelected:(BoxFile *)boxFile
+{
+    NSLog(@"File Selected");
+}
+
+#pragma mark -
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"BoxPopoverSegue"])
     {
         // Get reference to the destination view controller
-        DXBoxBrowserTableViewController *vc = [segue destinationViewController];
+        DXBoxBrowserTableViewController *vc = (DXBoxBrowserTableViewController *)[[segue destinationViewController] visibleViewController];
         
         // Pass any objects to the view controller here, like...
+        [vc setBoxDelegate:self];
+        
+        
     }    
 }
+
+
 
 @end

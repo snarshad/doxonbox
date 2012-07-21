@@ -33,7 +33,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Irg-6v-7Ze" kind="popover" popoverAnchorView="dGp-Xi-n1K" id="Tvg-zn-hlK">
+                                    <segue destination="Irg-6v-7Ze" kind="popover" identifier="BoxPopoverSegue" popoverAnchorView="dGp-Xi-n1K" id="Tvg-zn-hlK">
                                         <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                     </segue>
                                 </connections>
@@ -146,7 +146,7 @@
         <scene sceneID="jFN-pi-fzB">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a8r-H2-jGD" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <navigationController definesPresentationContext="YES" id="Irg-6v-7Ze" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="BoxPopoverSegue" definesPresentationContext="YES" id="Irg-6v-7Ze" sceneMemberID="viewController">
                     <value key="contentSizeForViewInPopover" type="size" width="320" height="800"/>
                     <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="85V-Dl-2vO">
                         <autoresizingMask key="autoresizingMask"/>

@@ -7,12 +7,14 @@
 //
 
 #import "DXBoxBrowserTableViewController.h"
+#import "BoxFile.h"
 
 @interface DXBoxBrowserTableViewController ()
 
 @end
 
 @implementation DXBoxBrowserTableViewController
+@synthesize boxDelegate;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -56,5 +58,43 @@
     // Insert code here for the action that should be performed when the accessory button is pressed.
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    BoxObject* boxObject = (BoxObject*)[self.rootFolder.objectsInFolder objectAtIndex:indexPath.row];
+    if ([boxObject isKindOfClass:[BoxFolder class]])
+    {
+        BoxObject * boxObject = ((BoxObject*)[self.rootFolder.objectsInFolder objectAtIndex:indexPath.row]);
+        if ([boxObject isKindOfClass:[BoxFolder class]]) {
+            DXBoxBrowserTableViewController * browserTableViewController = [[[self class] alloc] initWithFolderID:boxObject.objectId]; //Using [self class] ensures that if this class is subclassed, it pushes the correct kind of BoxBrowserTableViewController
+            if (self.navigationController == nil) {
+                NSLog(@"Error: BoxBrowserTableViewController should be in a UINavigationViewController to work properly.");
+            }
+            browserTableViewController.boxDelegate = self.boxDelegate;
+            [self.navigationController pushViewController:browserTableViewController animated:YES];
+        }    } 
 
+    if ([boxObject isKindOfClass:[BoxFile class]])
+    {
+        BoxFile *bFile = (BoxFile *)boxObject;
+        BoxFileModelFileType type = [bFile getFileType];
+        if (type == BoxFileModelGeneralFileType) {
+            NSLog(@"General");
+            
+            if ([boxDelegate respondsToSelector:@selector(fileSelected:)])
+            {
+                [boxDelegate fileSelected:bFile];
+            }
+//            [self dismissPopoverAnimated:YES];
+            
+        } else if (type == BoxFileModelWebdocFileType) {
+            NSLog(@"Webdoc");
+            if ([boxDelegate respondsToSelector:@selector(fileSelected:)])
+            {
+                [boxDelegate fileSelected:bFile];
+            }
+            //            [self dismissPopoverAnimated:YES];
+        }
+    }
+
+}
 @end

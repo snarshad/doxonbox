@@ -7,7 +7,13 @@
 //
 
 #import "BoxBrowserTableViewController.h"
+@class BoxFile;
+
+@protocol DXBoxBrowserTableViewControllerDelegate <NSObject>
+- (void)fileSelected:(BoxFile *)boxFile;
+@end
 
 @interface DXBoxBrowserTableViewController : BoxBrowserTableViewController
 
+@property (weak) id<DXBoxBrowserTableViewControllerDelegate>boxDelegate;
 @end
