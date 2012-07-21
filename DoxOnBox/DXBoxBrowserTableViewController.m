@@ -14,7 +14,7 @@
 @end
 
 @implementation DXBoxBrowserTableViewController
-@synthesize boxDelegate;
+@synthesize boxDelegate, popoverController;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

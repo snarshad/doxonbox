@@ -20,6 +20,9 @@
 @end
 
 @implementation DXRootViewController
+{
+    UIPopoverController *popoverController;
+}
 
 @synthesize pageViewController = _pageViewController;
 @synthesize modelController = _modelController;
@@ -167,6 +170,7 @@
 - (void)fileSelected:(BoxFile *)boxFile
 {
     NSLog(@"File Selected");
+    [popoverController dismissPopoverAnimated:YES];
 }
 
 #pragma mark -
@@ -175,6 +179,8 @@
 {
     if ([[segue identifier] isEqualToString:@"BoxPopoverSegue"])
     {
+        popoverController =  [(UIStoryboardPopoverSegue *)segue popoverController];
+        
         // Get reference to the destination view controller
         DXBoxBrowserTableViewController *vc = (DXBoxBrowserTableViewController *)[[segue destinationViewController] visibleViewController];
         
