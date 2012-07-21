@@ -13,11 +13,26 @@
 @synthesize lineBreakMode=lineBreakMode_;
 @synthesize colors=colors_;
 
+- (void)commonInit
+{
+    self.backgroundColor = [UIColor whiteColor];
+    self.font = [UIFont boldSystemFontOfSize:18];
+    
+    
+}
+
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = [UIColor whiteColor];
+        [self commonInit];
     }
+    return self;
+}
+
+- (id)initWithCoder:(NSCoder *)coder
+{
+    self = [super initWithCoder:coder];
+    [self commonInit];
     return self;
 }
 

@@ -78,6 +78,7 @@
 		EF06788915BB4B4F007EA819 /* GDataXMLNode+SingleNode.m in Sources */ = {isa = PBXBuildFile; fileRef = EF06788415BB4B4F007EA819 /* GDataXMLNode+SingleNode.m */; };
 		EF06788A15BB4B4F007EA819 /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = EF06788615BB4B4F007EA819 /* GDataXMLNode.m */; };
 		EF06788C15BB4B6C007EA819 /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EF06788B15BB4B6C007EA819 /* libxml2.2.dylib */; };
+		EF06788F15BB50C5007EA819 /* DXPageContent.m in Sources */ = {isa = PBXBuildFile; fileRef = EF06788E15BB50C5007EA819 /* DXPageContent.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -210,6 +211,8 @@
 		EF06788515BB4B4F007EA819 /* GDataXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataXMLNode.h; sourceTree = "<group>"; };
 		EF06788615BB4B4F007EA819 /* GDataXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDataXMLNode.m; sourceTree = "<group>"; };
 		EF06788B15BB4B6C007EA819 /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
+		EF06788D15BB50C5007EA819 /* DXPageContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXPageContent.h; sourceTree = "<group>"; };
+		EF06788E15BB50C5007EA819 /* DXPageContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXPageContent.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -418,7 +421,6 @@
 		EF06783315BB467F007EA819 = {
 			isa = PBXGroup;
 			children = (
-				BC5F941515BB52F6000184E4 /* Security.framework */,
 				EF06788B15BB4B6C007EA819 /* libxml2.2.dylib */,
 				EF06787B15BB49A2007EA819 /* libz.dylib */,
 				BC5F937115BB518F000184E4 /* SDKFiles */,
@@ -440,6 +442,7 @@
 		EF06784115BB467F007EA819 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BC5F941515BB52F6000184E4 /* Security.framework */,
 				EF06784215BB467F007EA819 /* UIKit.framework */,
 				EF06784415BB467F007EA819 /* Foundation.framework */,
 				EF06784615BB467F007EA819 /* CoreGraphics.framework */,
@@ -458,6 +461,8 @@
 				EF06785815BB467F007EA819 /* DXDataViewController.m */,
 				EF06785A15BB467F007EA819 /* DXModelController.h */,
 				EF06785B15BB467F007EA819 /* DXModelController.m */,
+				EF06788D15BB50C5007EA819 /* DXPageContent.h */,
+				EF06788E15BB50C5007EA819 /* DXPageContent.m */,
 				EF06785D15BB4680007EA819 /* MainStoryboard_iPhone.storyboard */,
 				EF06786015BB4680007EA819 /* MainStoryboard_iPad.storyboard */,
 				EF06784915BB467F007EA819 /* Supporting Files */,
@@ -618,6 +623,7 @@
 				BC5F940715BB518F000184E4 /* BoxPublicUnshareOperation.m in Sources */,
 				BC5F940815BB518F000184E4 /* BoxRenameOperation.m in Sources */,
 				BC5F940915BB518F000184E4 /* BoxUploadOperation.m in Sources */,
+				EF06788F15BB50C5007EA819 /* DXPageContent.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
