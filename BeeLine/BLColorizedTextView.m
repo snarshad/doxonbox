@@ -29,10 +29,11 @@
     return self;
 }
 
-- (id)initWithCoder:(NSCoder *)aDecoder
+- (id)initWithCoder:(NSCoder *)coder
 {
+    self = [super initWithCoder:coder];
     [self commonInit];
-    [super initWithCoder:aDecoder];
+    return self;
 }
 
 - (void)drawRect:(CGRect)rect {

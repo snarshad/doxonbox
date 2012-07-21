@@ -23,6 +23,16 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    NSMutableArray *colors = [[NSMutableArray alloc] initWithCapacity:4];
+    [colors addObject:[UIColor colorWithRed:1.0f green:0.0f blue:0.0f alpha:1.0f]];
+    [colors addObject:[UIColor colorWithRed:0.0f green:0.0f blue:0.0f alpha:1.0f]];
+    [colors addObject:[UIColor colorWithRed:0.0f green:0.0f blue:1.0f alpha:1.0f]];
+    [colors addObject:[UIColor colorWithRed:0.0f green:0.0f blue:0.0f alpha:1.0f]];
+    self.textView.colors = colors;
+    self.textView.lineBreakMode = UILineBreakModeWordWrap;
+    
+    self.textView.font = [UIFont systemFontOfSize:16.0f];
+
 }
 
 - (void)viewDidUnload
@@ -30,6 +40,7 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     self.dataLabel = nil;
+    self.textView = nil;
 }
 
 - (void)viewWillAppear:(BOOL)animated
