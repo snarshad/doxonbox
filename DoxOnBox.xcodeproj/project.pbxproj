@@ -18,6 +18,12 @@
 		EF06785C15BB467F007EA819 /* DXModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF06785B15BB467F007EA819 /* DXModelController.m */; };
 		EF06785F15BB4680007EA819 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF06785D15BB4680007EA819 /* MainStoryboard_iPhone.storyboard */; };
 		EF06786215BB4680007EA819 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF06786015BB4680007EA819 /* MainStoryboard_iPad.storyboard */; };
+		EF06787C15BB49A2007EA819 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EF06787B15BB49A2007EA819 /* libz.dylib */; };
+		EF06788715BB4B4F007EA819 /* BLColorizedTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = EF06788015BB4B4F007EA819 /* BLColorizedTextView.m */; };
+		EF06788815BB4B4F007EA819 /* BLTextColorizer.m in Sources */ = {isa = PBXBuildFile; fileRef = EF06788215BB4B4F007EA819 /* BLTextColorizer.m */; };
+		EF06788915BB4B4F007EA819 /* GDataXMLNode+SingleNode.m in Sources */ = {isa = PBXBuildFile; fileRef = EF06788415BB4B4F007EA819 /* GDataXMLNode+SingleNode.m */; };
+		EF06788A15BB4B4F007EA819 /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = EF06788615BB4B4F007EA819 /* GDataXMLNode.m */; };
+		EF06788C15BB4B6C007EA819 /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EF06788B15BB4B6C007EA819 /* libxml2.2.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +45,17 @@
 		EF06785B15BB467F007EA819 /* DXModelController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DXModelController.m; sourceTree = "<group>"; };
 		EF06785E15BB4680007EA819 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		EF06786115BB4680007EA819 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		EF06787B15BB49A2007EA819 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		EF06787E15BB4B4F007EA819 /* BeeLine-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BeeLine-Prefix.pch"; sourceTree = "<group>"; };
+		EF06787F15BB4B4F007EA819 /* BLColorizedTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLColorizedTextView.h; sourceTree = "<group>"; };
+		EF06788015BB4B4F007EA819 /* BLColorizedTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLColorizedTextView.m; sourceTree = "<group>"; };
+		EF06788115BB4B4F007EA819 /* BLTextColorizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLTextColorizer.h; sourceTree = "<group>"; };
+		EF06788215BB4B4F007EA819 /* BLTextColorizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLTextColorizer.m; sourceTree = "<group>"; };
+		EF06788315BB4B4F007EA819 /* GDataXMLNode+SingleNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GDataXMLNode+SingleNode.h"; sourceTree = "<group>"; };
+		EF06788415BB4B4F007EA819 /* GDataXMLNode+SingleNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GDataXMLNode+SingleNode.m"; sourceTree = "<group>"; };
+		EF06788515BB4B4F007EA819 /* GDataXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataXMLNode.h; sourceTree = "<group>"; };
+		EF06788615BB4B4F007EA819 /* GDataXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDataXMLNode.m; sourceTree = "<group>"; };
+		EF06788B15BB4B6C007EA819 /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +63,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF06788C15BB4B6C007EA819 /* libxml2.2.dylib in Frameworks */,
+				EF06787C15BB49A2007EA819 /* libz.dylib in Frameworks */,
 				EF06784315BB467F007EA819 /* UIKit.framework in Frameworks */,
 				EF06784515BB467F007EA819 /* Foundation.framework in Frameworks */,
 				EF06784715BB467F007EA819 /* CoreGraphics.framework in Frameworks */,
@@ -58,6 +77,9 @@
 		EF06783315BB467F007EA819 = {
 			isa = PBXGroup;
 			children = (
+				EF06788B15BB4B6C007EA819 /* libxml2.2.dylib */,
+				EF06787B15BB49A2007EA819 /* libz.dylib */,
+				EF06787D15BB4B4F007EA819 /* BeeLine */,
 				EF06784815BB467F007EA819 /* DoxOnBox */,
 				EF06784115BB467F007EA819 /* Frameworks */,
 				EF06783F15BB467F007EA819 /* Products */,
@@ -109,6 +131,22 @@
 				EF06785015BB467F007EA819 /* DoxOnBox-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EF06787D15BB4B4F007EA819 /* BeeLine */ = {
+			isa = PBXGroup;
+			children = (
+				EF06787E15BB4B4F007EA819 /* BeeLine-Prefix.pch */,
+				EF06787F15BB4B4F007EA819 /* BLColorizedTextView.h */,
+				EF06788015BB4B4F007EA819 /* BLColorizedTextView.m */,
+				EF06788115BB4B4F007EA819 /* BLTextColorizer.h */,
+				EF06788215BB4B4F007EA819 /* BLTextColorizer.m */,
+				EF06788315BB4B4F007EA819 /* GDataXMLNode+SingleNode.h */,
+				EF06788415BB4B4F007EA819 /* GDataXMLNode+SingleNode.m */,
+				EF06788515BB4B4F007EA819 /* GDataXMLNode.h */,
+				EF06788615BB4B4F007EA819 /* GDataXMLNode.m */,
+			);
+			path = BeeLine;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,6 +218,10 @@
 				EF06785615BB467F007EA819 /* DXRootViewController.m in Sources */,
 				EF06785915BB467F007EA819 /* DXDataViewController.m in Sources */,
 				EF06785C15BB467F007EA819 /* DXModelController.m in Sources */,
+				EF06788715BB4B4F007EA819 /* BLColorizedTextView.m in Sources */,
+				EF06788815BB4B4F007EA819 /* BLTextColorizer.m in Sources */,
+				EF06788915BB4B4F007EA819 /* GDataXMLNode+SingleNode.m in Sources */,
+				EF06788A15BB4B4F007EA819 /* GDataXMLNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,9 +275,11 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};
@@ -252,10 +296,12 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -301,6 +347,7 @@
 				EF06786715BB4680007EA819 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
