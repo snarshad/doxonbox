@@ -52,6 +52,15 @@
 		BC5F940915BB518F000184E4 /* BoxUploadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BC5F93D315BB518F000184E4 /* BoxUploadOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		BC5F940A15BB518F000184E4 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = BC5F93D415BB518F000184E4 /* README.md */; };
 		BC5F941615BB52F6000184E4 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC5F941515BB52F6000184E4 /* Security.framework */; };
+		BC5F942A15BB661E000184E4 /* BoxBlueGradientBackground.gif in Resources */ = {isa = PBXBuildFile; fileRef = BC5F93D615BB518F000184E4 /* BoxBlueGradientBackground.gif */; };
+		BC5F942B15BB661E000184E4 /* BoxCollabFolder.png in Resources */ = {isa = PBXBuildFile; fileRef = BC5F93D715BB518F000184E4 /* BoxCollabFolder.png */; };
+		BC5F942C15BB661E000184E4 /* BoxCollabFolder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC5F93D815BB518F000184E4 /* BoxCollabFolder@2x.png */; };
+		BC5F942D15BB661E000184E4 /* BoxDocumentIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = BC5F93D915BB518F000184E4 /* BoxDocumentIcon.png */; };
+		BC5F942E15BB661E000184E4 /* BoxDocumentIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC5F93DA15BB518F000184E4 /* BoxDocumentIcon@2x.png */; };
+		BC5F942F15BB661E000184E4 /* BoxFolderIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = BC5F93DB15BB518F000184E4 /* BoxFolderIcon.png */; };
+		BC5F943015BB661E000184E4 /* BoxFolderIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC5F93DC15BB518F000184E4 /* BoxFolderIcon@2x.png */; };
+		BC5F943115BB661E000184E4 /* BoxTopBarLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = BC5F93DD15BB518F000184E4 /* BoxTopBarLogo.png */; };
+		BC5F943215BB661E000184E4 /* BoxTopBarLogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC5F93DE15BB518F000184E4 /* BoxTopBarLogo@2x.png */; };
 		EF06784315BB467F007EA819 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF06784215BB467F007EA819 /* UIKit.framework */; };
 		EF06784515BB467F007EA819 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF06784415BB467F007EA819 /* Foundation.framework */; };
 		EF06784715BB467F007EA819 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF06784615BB467F007EA819 /* CoreGraphics.framework */; };
@@ -71,7 +80,6 @@
 		EF06788C15BB4B6C007EA819 /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EF06788B15BB4B6C007EA819 /* libxml2.2.dylib */; };
 		EF06788F15BB50C5007EA819 /* DXPageContent.m in Sources */ = {isa = PBXBuildFile; fileRef = EF06788E15BB50C5007EA819 /* DXPageContent.m */; };
 		EF0678B415BB60E2007EA819 /* DXBoxBrowserTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF0678B315BB60E2007EA819 /* DXBoxBrowserTableViewController.m */; };
-		EF0678B615BB6273007EA819 /* linen_dark_1024.png in Resources */ = {isa = PBXBuildFile; fileRef = EF0678B515BB6273007EA819 /* linen_dark_1024.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -206,18 +214,8 @@
 		EF06788B15BB4B6C007EA819 /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
 		EF06788D15BB50C5007EA819 /* DXPageContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXPageContent.h; sourceTree = "<group>"; };
 		EF06788E15BB50C5007EA819 /* DXPageContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXPageContent.m; sourceTree = "<group>"; };
-		EF0678A015BB5BE4007EA819 /* BoxBlueGradientBackground.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = BoxBlueGradientBackground.gif; path = SDKFiles/Resources/BoxBlueGradientBackground.gif; sourceTree = "<group>"; };
-		EF0678A115BB5BE4007EA819 /* BoxCollabFolder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BoxCollabFolder.png; path = SDKFiles/Resources/BoxCollabFolder.png; sourceTree = "<group>"; };
-		EF0678A215BB5BE4007EA819 /* BoxCollabFolder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "BoxCollabFolder@2x.png"; path = "SDKFiles/Resources/BoxCollabFolder@2x.png"; sourceTree = "<group>"; };
-		EF0678A315BB5BE4007EA819 /* BoxDocumentIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BoxDocumentIcon.png; path = SDKFiles/Resources/BoxDocumentIcon.png; sourceTree = "<group>"; };
-		EF0678A415BB5BE4007EA819 /* BoxDocumentIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "BoxDocumentIcon@2x.png"; path = "SDKFiles/Resources/BoxDocumentIcon@2x.png"; sourceTree = "<group>"; };
-		EF0678A515BB5BE4007EA819 /* BoxFolderIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BoxFolderIcon.png; path = SDKFiles/Resources/BoxFolderIcon.png; sourceTree = "<group>"; };
-		EF0678A615BB5BE4007EA819 /* BoxFolderIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "BoxFolderIcon@2x.png"; path = "SDKFiles/Resources/BoxFolderIcon@2x.png"; sourceTree = "<group>"; };
-		EF0678A715BB5BE4007EA819 /* BoxTopBarLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BoxTopBarLogo.png; path = SDKFiles/Resources/BoxTopBarLogo.png; sourceTree = "<group>"; };
-		EF0678A815BB5BE4007EA819 /* BoxTopBarLogo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "BoxTopBarLogo@2x.png"; path = "SDKFiles/Resources/BoxTopBarLogo@2x.png"; sourceTree = "<group>"; };
 		EF0678B215BB60E2007EA819 /* DXBoxBrowserTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXBoxBrowserTableViewController.h; sourceTree = "<group>"; };
 		EF0678B315BB60E2007EA819 /* DXBoxBrowserTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXBoxBrowserTableViewController.m; sourceTree = "<group>"; };
-		EF0678B515BB6273007EA819 /* linen_dark_1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = linen_dark_1024.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -426,7 +424,6 @@
 		EF06783315BB467F007EA819 = {
 			isa = PBXGroup;
 			children = (
-				EF06789C15BB5BB2007EA819 /* images */,
 				EF06788B15BB4B6C007EA819 /* libxml2.2.dylib */,
 				EF06787B15BB49A2007EA819 /* libz.dylib */,
 				BC5F937115BB518F000184E4 /* SDKFiles */,
@@ -505,23 +502,6 @@
 			path = BeeLine;
 			sourceTree = "<group>";
 		};
-		EF06789C15BB5BB2007EA819 /* images */ = {
-			isa = PBXGroup;
-			children = (
-				EF0678A015BB5BE4007EA819 /* BoxBlueGradientBackground.gif */,
-				EF0678A115BB5BE4007EA819 /* BoxCollabFolder.png */,
-				EF0678A215BB5BE4007EA819 /* BoxCollabFolder@2x.png */,
-				EF0678A315BB5BE4007EA819 /* BoxDocumentIcon.png */,
-				EF0678A415BB5BE4007EA819 /* BoxDocumentIcon@2x.png */,
-				EF0678A515BB5BE4007EA819 /* BoxFolderIcon.png */,
-				EF0678A615BB5BE4007EA819 /* BoxFolderIcon@2x.png */,
-				EF0678A715BB5BE4007EA819 /* BoxTopBarLogo.png */,
-				EF0678A815BB5BE4007EA819 /* BoxTopBarLogo@2x.png */,
-				EF0678B515BB6273007EA819 /* linen_dark_1024.png */,
-			);
-			name = images;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -573,20 +553,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC5F942A15BB661E000184E4 /* BoxBlueGradientBackground.gif in Resources */,
+				BC5F942B15BB661E000184E4 /* BoxCollabFolder.png in Resources */,
+				BC5F942C15BB661E000184E4 /* BoxCollabFolder@2x.png in Resources */,
+				BC5F942D15BB661E000184E4 /* BoxDocumentIcon.png in Resources */,
+				BC5F942E15BB661E000184E4 /* BoxDocumentIcon@2x.png in Resources */,
+				BC5F942F15BB661E000184E4 /* BoxFolderIcon.png in Resources */,
+				BC5F943015BB661E000184E4 /* BoxFolderIcon@2x.png in Resources */,
+				BC5F943115BB661E000184E4 /* BoxTopBarLogo.png in Resources */,
+				BC5F943215BB661E000184E4 /* BoxTopBarLogo@2x.png in Resources */,
 				EF06784D15BB467F007EA819 /* InfoPlist.strings in Resources */,
 				EF06785F15BB4680007EA819 /* MainStoryboard_iPhone.storyboard in Resources */,
 				EF06786215BB4680007EA819 /* MainStoryboard_iPad.storyboard in Resources */,
 				BC5F940A15BB518F000184E4 /* README.md in Resources */,
-				EF0678A915BB5BE4007EA819 /* BoxBlueGradientBackground.gif in Resources */,
-				EF0678AA15BB5BE4007EA819 /* BoxCollabFolder.png in Resources */,
-				EF0678AB15BB5BE4007EA819 /* BoxCollabFolder@2x.png in Resources */,
-				EF0678AC15BB5BE4007EA819 /* BoxDocumentIcon.png in Resources */,
-				EF0678AD15BB5BE4007EA819 /* BoxDocumentIcon@2x.png in Resources */,
-				EF0678AE15BB5BE4007EA819 /* BoxFolderIcon.png in Resources */,
-				EF0678AF15BB5BE4007EA819 /* BoxFolderIcon@2x.png in Resources */,
-				EF0678B015BB5BE4007EA819 /* BoxTopBarLogo.png in Resources */,
-				EF0678B115BB5BE4007EA819 /* BoxTopBarLogo@2x.png in Resources */,
-				EF0678B615BB6273007EA819 /* linen_dark_1024.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
