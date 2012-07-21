@@ -46,4 +46,15 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+- (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell * cell = [super tableView:tableView cellForRowAtIndexPath:indexPath];
+    cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
+    // Insert code here for the action that should be performed when the accessory button is pressed.
+}
+
+
 @end

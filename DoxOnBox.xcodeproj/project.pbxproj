@@ -70,15 +70,6 @@
 		EF06788A15BB4B4F007EA819 /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = EF06788615BB4B4F007EA819 /* GDataXMLNode.m */; };
 		EF06788C15BB4B6C007EA819 /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EF06788B15BB4B6C007EA819 /* libxml2.2.dylib */; };
 		EF06788F15BB50C5007EA819 /* DXPageContent.m in Sources */ = {isa = PBXBuildFile; fileRef = EF06788E15BB50C5007EA819 /* DXPageContent.m */; };
-		EF0678A915BB5BE4007EA819 /* BoxBlueGradientBackground.gif in Resources */ = {isa = PBXBuildFile; fileRef = EF0678A015BB5BE4007EA819 /* BoxBlueGradientBackground.gif */; };
-		EF0678AA15BB5BE4007EA819 /* BoxCollabFolder.png in Resources */ = {isa = PBXBuildFile; fileRef = EF0678A115BB5BE4007EA819 /* BoxCollabFolder.png */; };
-		EF0678AB15BB5BE4007EA819 /* BoxCollabFolder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF0678A215BB5BE4007EA819 /* BoxCollabFolder@2x.png */; };
-		EF0678AC15BB5BE4007EA819 /* BoxDocumentIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = EF0678A315BB5BE4007EA819 /* BoxDocumentIcon.png */; };
-		EF0678AD15BB5BE4007EA819 /* BoxDocumentIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF0678A415BB5BE4007EA819 /* BoxDocumentIcon@2x.png */; };
-		EF0678AE15BB5BE4007EA819 /* BoxFolderIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = EF0678A515BB5BE4007EA819 /* BoxFolderIcon.png */; };
-		EF0678AF15BB5BE4007EA819 /* BoxFolderIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF0678A615BB5BE4007EA819 /* BoxFolderIcon@2x.png */; };
-		EF0678B015BB5BE4007EA819 /* BoxTopBarLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = EF0678A715BB5BE4007EA819 /* BoxTopBarLogo.png */; };
-		EF0678B115BB5BE4007EA819 /* BoxTopBarLogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF0678A815BB5BE4007EA819 /* BoxTopBarLogo@2x.png */; };
 		EF0678B415BB60E2007EA819 /* DXBoxBrowserTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF0678B315BB60E2007EA819 /* DXBoxBrowserTableViewController.m */; };
 		EF0678B615BB6273007EA819 /* linen_dark_1024.png in Resources */ = {isa = PBXBuildFile; fileRef = EF0678B515BB6273007EA819 /* linen_dark_1024.png */; };
 /* End PBXBuildFile section */
