@@ -111,6 +111,7 @@
                             <outlet property="delegate" destination="1sp-hi-UZ9" id="zaE-k7-lJ8"/>
                         </connections>
                     </tableView>
+                    <value key="contentSizeForViewInPopover" type="size" width="320" height="800"/>
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="20" y="-129"/>
@@ -120,6 +121,27 @@
         <image name="BoxTopBarLogo.png" width="58" height="34"/>
         <image name="linen_dark_1024.png" width="1024" height="1024"/>
     </resources>
+    <classes>
+        <class className="BLColorizedTextView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BLColorizedTextView.h"/>
+        </class>
+        <class className="BoxBrowserTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BoxBrowserTableViewController.h"/>
+        </class>
+        <class className="DXBoxBrowserTableViewController" superclassName="BoxBrowserTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DXBoxBrowserTableViewController.h"/>
+        </class>
+        <class className="DXDataViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DXDataViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="dataLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="textView" candidateClass="BLColorizedTextView"/>
+            </relationships>
+        </class>
+        <class className="DXRootViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DXRootViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

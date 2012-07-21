@@ -79,7 +79,6 @@
 		EF06788A15BB4B4F007EA819 /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = EF06788615BB4B4F007EA819 /* GDataXMLNode.m */; };
 		EF06788C15BB4B6C007EA819 /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EF06788B15BB4B6C007EA819 /* libxml2.2.dylib */; };
 		EF06788F15BB50C5007EA819 /* DXPageContent.m in Sources */ = {isa = PBXBuildFile; fileRef = EF06788E15BB50C5007EA819 /* DXPageContent.m */; };
-		EF06789F15BB5BB9007EA819 /* linen_dark_1024.png in Resources */ = {isa = PBXBuildFile; fileRef = EF06789E15BB5BB9007EA819 /* linen_dark_1024.png */; };
 		EF0678A915BB5BE4007EA819 /* BoxBlueGradientBackground.gif in Resources */ = {isa = PBXBuildFile; fileRef = EF0678A015BB5BE4007EA819 /* BoxBlueGradientBackground.gif */; };
 		EF0678AA15BB5BE4007EA819 /* BoxCollabFolder.png in Resources */ = {isa = PBXBuildFile; fileRef = EF0678A115BB5BE4007EA819 /* BoxCollabFolder.png */; };
 		EF0678AB15BB5BE4007EA819 /* BoxCollabFolder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF0678A215BB5BE4007EA819 /* BoxCollabFolder@2x.png */; };
@@ -90,6 +89,7 @@
 		EF0678B015BB5BE4007EA819 /* BoxTopBarLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = EF0678A715BB5BE4007EA819 /* BoxTopBarLogo.png */; };
 		EF0678B115BB5BE4007EA819 /* BoxTopBarLogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF0678A815BB5BE4007EA819 /* BoxTopBarLogo@2x.png */; };
 		EF0678B415BB60E2007EA819 /* DXBoxBrowserTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF0678B315BB60E2007EA819 /* DXBoxBrowserTableViewController.m */; };
+		EF0678B615BB6273007EA819 /* linen_dark_1024.png in Resources */ = {isa = PBXBuildFile; fileRef = EF0678B515BB6273007EA819 /* linen_dark_1024.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -224,7 +224,6 @@
 		EF06788B15BB4B6C007EA819 /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
 		EF06788D15BB50C5007EA819 /* DXPageContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXPageContent.h; sourceTree = "<group>"; };
 		EF06788E15BB50C5007EA819 /* DXPageContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXPageContent.m; sourceTree = "<group>"; };
-		EF06789E15BB5BB9007EA819 /* linen_dark_1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = linen_dark_1024.png; path = ../KioskWebBrowser/KioskWebBrowser/images/linen_dark_1024.png; sourceTree = "<group>"; };
 		EF0678A015BB5BE4007EA819 /* BoxBlueGradientBackground.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = BoxBlueGradientBackground.gif; path = SDKFiles/Resources/BoxBlueGradientBackground.gif; sourceTree = "<group>"; };
 		EF0678A115BB5BE4007EA819 /* BoxCollabFolder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BoxCollabFolder.png; path = SDKFiles/Resources/BoxCollabFolder.png; sourceTree = "<group>"; };
 		EF0678A215BB5BE4007EA819 /* BoxCollabFolder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "BoxCollabFolder@2x.png"; path = "SDKFiles/Resources/BoxCollabFolder@2x.png"; sourceTree = "<group>"; };
@@ -236,6 +235,7 @@
 		EF0678A815BB5BE4007EA819 /* BoxTopBarLogo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "BoxTopBarLogo@2x.png"; path = "SDKFiles/Resources/BoxTopBarLogo@2x.png"; sourceTree = "<group>"; };
 		EF0678B215BB60E2007EA819 /* DXBoxBrowserTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXBoxBrowserTableViewController.h; sourceTree = "<group>"; };
 		EF0678B315BB60E2007EA819 /* DXBoxBrowserTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXBoxBrowserTableViewController.m; sourceTree = "<group>"; };
+		EF0678B515BB6273007EA819 /* linen_dark_1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = linen_dark_1024.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -535,7 +535,7 @@
 				EF0678A615BB5BE4007EA819 /* BoxFolderIcon@2x.png */,
 				EF0678A715BB5BE4007EA819 /* BoxTopBarLogo.png */,
 				EF0678A815BB5BE4007EA819 /* BoxTopBarLogo@2x.png */,
-				EF06789E15BB5BB9007EA819 /* linen_dark_1024.png */,
+				EF0678B515BB6273007EA819 /* linen_dark_1024.png */,
 			);
 			name = images;
 			sourceTree = "<group>";
@@ -604,7 +604,6 @@
 				BC5F941115BB518F000184E4 /* BoxFolderIcon@2x.png in Resources */,
 				BC5F941215BB518F000184E4 /* BoxTopBarLogo.png in Resources */,
 				BC5F941315BB518F000184E4 /* BoxTopBarLogo@2x.png in Resources */,
-				EF06789F15BB5BB9007EA819 /* linen_dark_1024.png in Resources */,
 				EF0678A915BB5BE4007EA819 /* BoxBlueGradientBackground.gif in Resources */,
 				EF0678AA15BB5BE4007EA819 /* BoxCollabFolder.png in Resources */,
 				EF0678AB15BB5BE4007EA819 /* BoxCollabFolder@2x.png in Resources */,
@@ -614,6 +613,7 @@
 				EF0678AF15BB5BE4007EA819 /* BoxFolderIcon@2x.png in Resources */,
 				EF0678B015BB5BE4007EA819 /* BoxTopBarLogo.png in Resources */,
 				EF0678B115BB5BE4007EA819 /* BoxTopBarLogo@2x.png in Resources */,
+				EF0678B615BB6273007EA819 /* linen_dark_1024.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
