@@ -29,6 +29,5 @@
  
 */
 
-#warning This field needs to be completed with your API Key. Otherwise, the SDK will not work.
 static const NSString * BOX_API_KEY = @"r97t62touzm3x6h5eg5hsfpiq0lvumir";
 
