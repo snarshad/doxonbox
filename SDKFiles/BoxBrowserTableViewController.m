@@ -52,6 +52,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    if (!self.folderID)
+    {
+        self.folderID = @"0";
+    }
     self.title = @"Loading...";
 }
 

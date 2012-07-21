@@ -13,6 +13,7 @@
 #import "DXDataViewController.h"
 
 #import "BoxLoginViewController.h"
+#import "DXBoxBrowserTableViewController.h"
 
 @interface DXRootViewController ()
 @property (readonly, strong, nonatomic) DXModelController *modelController;
@@ -160,9 +161,17 @@
         [self addChildViewController:self.pageViewController];
         [self.view addSubview:self.pageViewController.view];
     }];
-    
-
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"BoxPopoverSegue"])
+    {
+        // Get reference to the destination view controller
+        DXBoxBrowserTableViewController *vc = [segue destinationViewController];
+        
+        // Pass any objects to the view controller here, like...
+    }    
+}
 
 @end

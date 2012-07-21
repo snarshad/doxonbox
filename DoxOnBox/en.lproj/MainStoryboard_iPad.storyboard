@@ -14,7 +14,31 @@
                     <view key="view" contentMode="scaleToFill" id="16">
                         <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="linen_dark_1024.png" id="Ppw-4V-BJr">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1004"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="dGp-Xi-n1K">
+                                <rect key="frame" x="20" y="20" width="152" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                <size key="titleShadowOffset" width="2" height="2"/>
+                                <state key="normal" image="BoxTopBarLogo.png">
+                                    <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="1sp-hi-UZ9" kind="popover" identifier="BoxPopoverSegue" popoverAnchorView="dGp-Xi-n1K" id="91b-bh-go2">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                        </subviews>
                         <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
                     </view>
                 </viewController>
@@ -60,24 +84,42 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="896" y="-243"/>
+            <point key="canvasLocation" x="896" y="-139"/>
+        </scene>
+        <!--Box Browser Table View Controller-->
+        <scene sceneID="QNb-aL-TWw">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kDU-Ri-kj3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="1sp-hi-UZ9" customClass="DXBoxBrowserTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="YO3-re-RXt">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1004"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BoxBrowserTableViewCell" id="0RP-JU-buW">
+                                <rect key="frame" x="0.0" y="22" width="768" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="1sp-hi-UZ9" id="fcJ-nK-la7"/>
+                            <outlet property="delegate" destination="1sp-hi-UZ9" id="zaE-k7-lJ8"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="20" y="-129"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="BLColorizedTextView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BLColorizedTextView.h"/>
-        </class>
-        <class className="DXDataViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DXDataViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="dataLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="textView" candidateClass="BLColorizedTextView"/>
-            </relationships>
-        </class>
-        <class className="DXRootViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DXRootViewController.h"/>
-        </class>
-    </classes>
+    <resources>
+        <image name="BoxTopBarLogo.png" width="58" height="34"/>
+        <image name="linen_dark_1024.png" width="1024" height="1024"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>
