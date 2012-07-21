@@ -7,6 +7,7 @@
 //
 
 #import "DXDataViewController.h"
+#import "DXPageContent.h"
 
 @interface DXDataViewController ()
 
@@ -16,6 +17,7 @@
 
 @synthesize dataLabel = _dataLabel;
 @synthesize dataObject = _dataObject;
+@synthesize textView;
 
 - (void)viewDidLoad
 {
@@ -33,7 +35,8 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    self.dataLabel.text = [self.dataObject description];
+    self.dataLabel.text = [self.dataObject pageTitle];
+    self.textView.text = [self.dataObject pageText];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

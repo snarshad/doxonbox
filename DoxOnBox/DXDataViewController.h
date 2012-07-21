@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BLColorizedTextView.h"
 
 @interface DXDataViewController : UIViewController
 
 @property (strong, nonatomic) IBOutlet UILabel *dataLabel;
+@property (strong, nonatomic) IBOutlet BLColorizedTextView *textView;
 @property (strong, nonatomic) id dataObject;
 
 @end
