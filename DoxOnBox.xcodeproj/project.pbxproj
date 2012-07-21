@@ -51,15 +51,6 @@
 		BC5F940815BB518F000184E4 /* BoxRenameOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BC5F93D115BB518F000184E4 /* BoxRenameOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		BC5F940915BB518F000184E4 /* BoxUploadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BC5F93D315BB518F000184E4 /* BoxUploadOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		BC5F940A15BB518F000184E4 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = BC5F93D415BB518F000184E4 /* README.md */; };
-		BC5F940B15BB518F000184E4 /* BoxBlueGradientBackground.gif in Resources */ = {isa = PBXBuildFile; fileRef = BC5F93D615BB518F000184E4 /* BoxBlueGradientBackground.gif */; };
-		BC5F940C15BB518F000184E4 /* BoxCollabFolder.png in Resources */ = {isa = PBXBuildFile; fileRef = BC5F93D715BB518F000184E4 /* BoxCollabFolder.png */; };
-		BC5F940D15BB518F000184E4 /* BoxCollabFolder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC5F93D815BB518F000184E4 /* BoxCollabFolder@2x.png */; };
-		BC5F940E15BB518F000184E4 /* BoxDocumentIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = BC5F93D915BB518F000184E4 /* BoxDocumentIcon.png */; };
-		BC5F940F15BB518F000184E4 /* BoxDocumentIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC5F93DA15BB518F000184E4 /* BoxDocumentIcon@2x.png */; };
-		BC5F941015BB518F000184E4 /* BoxFolderIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = BC5F93DB15BB518F000184E4 /* BoxFolderIcon.png */; };
-		BC5F941115BB518F000184E4 /* BoxFolderIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC5F93DC15BB518F000184E4 /* BoxFolderIcon@2x.png */; };
-		BC5F941215BB518F000184E4 /* BoxTopBarLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = BC5F93DD15BB518F000184E4 /* BoxTopBarLogo.png */; };
-		BC5F941315BB518F000184E4 /* BoxTopBarLogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC5F93DE15BB518F000184E4 /* BoxTopBarLogo@2x.png */; };
 		BC5F941615BB52F6000184E4 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC5F941515BB52F6000184E4 /* Security.framework */; };
 		EF06784315BB467F007EA819 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF06784215BB467F007EA819 /* UIKit.framework */; };
 		EF06784515BB467F007EA819 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF06784415BB467F007EA819 /* Foundation.framework */; };
@@ -586,15 +577,15 @@
 				EF06785F15BB4680007EA819 /* MainStoryboard_iPhone.storyboard in Resources */,
 				EF06786215BB4680007EA819 /* MainStoryboard_iPad.storyboard in Resources */,
 				BC5F940A15BB518F000184E4 /* README.md in Resources */,
-				BC5F940B15BB518F000184E4 /* BoxBlueGradientBackground.gif in Resources */,
-				BC5F940C15BB518F000184E4 /* BoxCollabFolder.png in Resources */,
-				BC5F940D15BB518F000184E4 /* BoxCollabFolder@2x.png in Resources */,
-				BC5F940E15BB518F000184E4 /* BoxDocumentIcon.png in Resources */,
-				BC5F940F15BB518F000184E4 /* BoxDocumentIcon@2x.png in Resources */,
-				BC5F941015BB518F000184E4 /* BoxFolderIcon.png in Resources */,
-				BC5F941115BB518F000184E4 /* BoxFolderIcon@2x.png in Resources */,
-				BC5F941215BB518F000184E4 /* BoxTopBarLogo.png in Resources */,
-				BC5F941315BB518F000184E4 /* BoxTopBarLogo@2x.png in Resources */,
+				EF0678A915BB5BE4007EA819 /* BoxBlueGradientBackground.gif in Resources */,
+				EF0678AA15BB5BE4007EA819 /* BoxCollabFolder.png in Resources */,
+				EF0678AB15BB5BE4007EA819 /* BoxCollabFolder@2x.png in Resources */,
+				EF0678AC15BB5BE4007EA819 /* BoxDocumentIcon.png in Resources */,
+				EF0678AD15BB5BE4007EA819 /* BoxDocumentIcon@2x.png in Resources */,
+				EF0678AE15BB5BE4007EA819 /* BoxFolderIcon.png in Resources */,
+				EF0678AF15BB5BE4007EA819 /* BoxFolderIcon@2x.png in Resources */,
+				EF0678B015BB5BE4007EA819 /* BoxTopBarLogo.png in Resources */,
+				EF0678B115BB5BE4007EA819 /* BoxTopBarLogo@2x.png in Resources */,
 				EF0678B615BB6273007EA819 /* linen_dark_1024.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
