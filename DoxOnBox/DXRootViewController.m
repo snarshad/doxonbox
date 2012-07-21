@@ -12,6 +12,8 @@
 
 #import "DXDataViewController.h"
 
+#import "BoxLoginViewController.h"
+
 @interface DXRootViewController ()
 @property (readonly, strong, nonatomic) DXModelController *modelController;
 @end
@@ -20,35 +22,64 @@
 
 @synthesize pageViewController = _pageViewController;
 @synthesize modelController = _modelController;
+@synthesize boxLoginController;
+
+
+
+- (void)setupLoginController
+{
+    self.boxLoginController = [BoxLoginViewController loginViewControllerWithNavBar:NO];
+    self.boxLoginController.boxLoginDelegate = self;
+}
+
+- (void)setupPageViewController
+{
+    self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStylePageCurl navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
+    self.pageViewController.delegate = self;
+    
+    DXDataViewController *startingViewController = [self.modelController viewControllerAtIndex:0 storyboard:self.storyboard];
+    NSArray *viewControllers = [NSArray arrayWithObject:startingViewController];
+    [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:NULL];
+    
+    self.pageViewController.dataSource = self.modelController;
+    
+    // Set the page view controller's bounds using an inset rect so that self's view is visible around the edges of the pages.
+    CGRect pageViewRect = self.view.bounds;
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+        pageViewRect = CGRectInset(pageViewRect, 40.0, 40.0);
+    }
+    self.pageViewController.view.frame = pageViewRect;    
+}
+
+
+- (void)openPagesView
+{    
+    [self.pageViewController didMoveToParentViewController:self];
+    // Add the page view controller's gesture recognizers to the book view controller's view so that the gestures are started more easily.
+    [self addChildViewController:self.pageViewController];
+    [self.view addSubview:self.pageViewController.view];
+    
+    self.view.gestureRecognizers = self.pageViewController.gestureRecognizers;
+}
+
+- (void)openLoginView
+{
+    [self.view addSubview:self.boxLoginController.view];
+    [self addChildViewController:self.boxLoginController];
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     // Configure the page view controller and add it as a child view controller.
-    self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStylePageCurl navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
-    self.pageViewController.delegate = self;
-
-    DXDataViewController *startingViewController = [self.modelController viewControllerAtIndex:0 storyboard:self.storyboard];
-    NSArray *viewControllers = [NSArray arrayWithObject:startingViewController];
-    [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:NULL];
-
-    self.pageViewController.dataSource = self.modelController;
-
-    [self addChildViewController:self.pageViewController];
-    [self.view addSubview:self.pageViewController.view];
-
-    // Set the page view controller's bounds using an inset rect so that self's view is visible around the edges of the pages.
-    CGRect pageViewRect = self.view.bounds;
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-        pageViewRect = CGRectInset(pageViewRect, 40.0, 40.0);
-    }
-    self.pageViewController.view.frame = pageViewRect;
-
-    [self.pageViewController didMoveToParentViewController:self];
-
-    // Add the page view controller's gesture recognizers to the book view controller's view so that the gestures are started more easily.
-    self.view.gestureRecognizers = self.pageViewController.gestureRecognizers;
+    [self setupPageViewController];
+    [self setupLoginController];
+    
+    [self openLoginView];
+//    [self openPagesView];
+    
+    
 }
 
 - (void)viewDidUnload
@@ -115,5 +146,23 @@
 
     return UIPageViewControllerSpineLocationMid;
 }
+
+#pragma mark -
+- (void)boxLoginViewController:(BoxLoginViewController*)boxLoginViewController didFinishWithResult:(LoginResult)result
+{
+    //this method will be responsible for removing the view controller from the screen
+    
+//    [boxLoginViewController removeFromParentViewController];
+    
+    [UIView transitionFromView:self.boxLoginController.view toView:self.pageViewController.view duration:.5 options:UIViewAnimationOptionCurveEaseIn|UIViewAnimationOptionCurveEaseOut completion:^(BOOL finished) {
+        [boxLoginController removeFromParentViewController];
+//        [boxLoginViewController.view removeFromSuperview];
+        [self addChildViewController:self.pageViewController];
+        [self.view addSubview:self.pageViewController.view];
+    }];
+    
+
+}
+
 
 @end

@@ -19,7 +19,7 @@
                     </view>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="13" y="-243"/>
+            <point key="canvasLocation" x="-583" y="-315"/>
         </scene>
         <!--Data View Controller-->
         <scene sceneID="7">
@@ -53,6 +53,7 @@
                         <color key="backgroundColor" red="0.97826086960000003" green="0.91848131079999995" blue="0.73914263440000005" alpha="1" colorSpace="calibratedRGB"/>
                         <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
                     </view>
+                    <navigationItem key="navigationItem" id="hxn-5L-6AM"/>
                     <connections>
                         <outlet property="dataLabel" destination="14" id="15"/>
                         <outlet property="textView" destination="6ZJ-yy-U9b" id="KWm-1Y-QIh"/>
