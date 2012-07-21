@@ -1,0 +1,308 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EF06784315BB467F007EA819 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF06784215BB467F007EA819 /* UIKit.framework */; };
+		EF06784515BB467F007EA819 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF06784415BB467F007EA819 /* Foundation.framework */; };
+		EF06784715BB467F007EA819 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF06784615BB467F007EA819 /* CoreGraphics.framework */; };
+		EF06784D15BB467F007EA819 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EF06784B15BB467F007EA819 /* InfoPlist.strings */; };
+		EF06784F15BB467F007EA819 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EF06784E15BB467F007EA819 /* main.m */; };
+		EF06785315BB467F007EA819 /* DXAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EF06785215BB467F007EA819 /* DXAppDelegate.m */; };
+		EF06785615BB467F007EA819 /* DXRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF06785515BB467F007EA819 /* DXRootViewController.m */; };
+		EF06785915BB467F007EA819 /* DXDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF06785815BB467F007EA819 /* DXDataViewController.m */; };
+		EF06785C15BB467F007EA819 /* DXModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF06785B15BB467F007EA819 /* DXModelController.m */; };
+		EF06785F15BB4680007EA819 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF06785D15BB4680007EA819 /* MainStoryboard_iPhone.storyboard */; };
+		EF06786215BB4680007EA819 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF06786015BB4680007EA819 /* MainStoryboard_iPad.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		EF06783E15BB467F007EA819 /* DoxOnBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoxOnBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF06784215BB467F007EA819 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		EF06784415BB467F007EA819 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		EF06784615BB467F007EA819 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		EF06784A15BB467F007EA819 /* DoxOnBox-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DoxOnBox-Info.plist"; sourceTree = "<group>"; };
+		EF06784C15BB467F007EA819 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EF06784E15BB467F007EA819 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EF06785015BB467F007EA819 /* DoxOnBox-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DoxOnBox-Prefix.pch"; sourceTree = "<group>"; };
+		EF06785115BB467F007EA819 /* DXAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DXAppDelegate.h; sourceTree = "<group>"; };
+		EF06785215BB467F007EA819 /* DXAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DXAppDelegate.m; sourceTree = "<group>"; };
+		EF06785415BB467F007EA819 /* DXRootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DXRootViewController.h; sourceTree = "<group>"; };
+		EF06785515BB467F007EA819 /* DXRootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DXRootViewController.m; sourceTree = "<group>"; };
+		EF06785715BB467F007EA819 /* DXDataViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DXDataViewController.h; sourceTree = "<group>"; };
+		EF06785815BB467F007EA819 /* DXDataViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DXDataViewController.m; sourceTree = "<group>"; };
+		EF06785A15BB467F007EA819 /* DXModelController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DXModelController.h; sourceTree = "<group>"; };
+		EF06785B15BB467F007EA819 /* DXModelController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DXModelController.m; sourceTree = "<group>"; };
+		EF06785E15BB4680007EA819 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		EF06786115BB4680007EA819 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EF06783B15BB467F007EA819 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF06784315BB467F007EA819 /* UIKit.framework in Frameworks */,
+				EF06784515BB467F007EA819 /* Foundation.framework in Frameworks */,
+				EF06784715BB467F007EA819 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EF06783315BB467F007EA819 = {
+			isa = PBXGroup;
+			children = (
+				EF06784815BB467F007EA819 /* DoxOnBox */,
+				EF06784115BB467F007EA819 /* Frameworks */,
+				EF06783F15BB467F007EA819 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EF06783F15BB467F007EA819 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EF06783E15BB467F007EA819 /* DoxOnBox.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EF06784115BB467F007EA819 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EF06784215BB467F007EA819 /* UIKit.framework */,
+				EF06784415BB467F007EA819 /* Foundation.framework */,
+				EF06784615BB467F007EA819 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EF06784815BB467F007EA819 /* DoxOnBox */ = {
+			isa = PBXGroup;
+			children = (
+				EF06785115BB467F007EA819 /* DXAppDelegate.h */,
+				EF06785215BB467F007EA819 /* DXAppDelegate.m */,
+				EF06785415BB467F007EA819 /* DXRootViewController.h */,
+				EF06785515BB467F007EA819 /* DXRootViewController.m */,
+				EF06785715BB467F007EA819 /* DXDataViewController.h */,
+				EF06785815BB467F007EA819 /* DXDataViewController.m */,
+				EF06785A15BB467F007EA819 /* DXModelController.h */,
+				EF06785B15BB467F007EA819 /* DXModelController.m */,
+				EF06785D15BB4680007EA819 /* MainStoryboard_iPhone.storyboard */,
+				EF06786015BB4680007EA819 /* MainStoryboard_iPad.storyboard */,
+				EF06784915BB467F007EA819 /* Supporting Files */,
+			);
+			path = DoxOnBox;
+			sourceTree = "<group>";
+		};
+		EF06784915BB467F007EA819 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EF06784A15BB467F007EA819 /* DoxOnBox-Info.plist */,
+				EF06784B15BB467F007EA819 /* InfoPlist.strings */,
+				EF06784E15BB467F007EA819 /* main.m */,
+				EF06785015BB467F007EA819 /* DoxOnBox-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EF06783D15BB467F007EA819 /* DoxOnBox */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF06786515BB4680007EA819 /* Build configuration list for PBXNativeTarget "DoxOnBox" */;
+			buildPhases = (
+				EF06783A15BB467F007EA819 /* Sources */,
+				EF06783B15BB467F007EA819 /* Frameworks */,
+				EF06783C15BB467F007EA819 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DoxOnBox;
+			productName = DoxOnBox;
+			productReference = EF06783E15BB467F007EA819 /* DoxOnBox.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EF06783515BB467F007EA819 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = DX;
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = EF06783815BB467F007EA819 /* Build configuration list for PBXProject "DoxOnBox" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = EF06783315BB467F007EA819;
+			productRefGroup = EF06783F15BB467F007EA819 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EF06783D15BB467F007EA819 /* DoxOnBox */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EF06783C15BB467F007EA819 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF06784D15BB467F007EA819 /* InfoPlist.strings in Resources */,
+				EF06785F15BB4680007EA819 /* MainStoryboard_iPhone.storyboard in Resources */,
+				EF06786215BB4680007EA819 /* MainStoryboard_iPad.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EF06783A15BB467F007EA819 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF06784F15BB467F007EA819 /* main.m in Sources */,
+				EF06785315BB467F007EA819 /* DXAppDelegate.m in Sources */,
+				EF06785615BB467F007EA819 /* DXRootViewController.m in Sources */,
+				EF06785915BB467F007EA819 /* DXDataViewController.m in Sources */,
+				EF06785C15BB467F007EA819 /* DXModelController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		EF06784B15BB467F007EA819 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EF06784C15BB467F007EA819 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		EF06785D15BB4680007EA819 /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EF06785E15BB4680007EA819 /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		EF06786015BB4680007EA819 /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EF06786115BB4680007EA819 /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EF06786315BB4680007EA819 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EF06786415BB4680007EA819 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EF06786615BB4680007EA819 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DoxOnBox/DoxOnBox-Prefix.pch";
+				INFOPLIST_FILE = "DoxOnBox/DoxOnBox-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		EF06786715BB4680007EA819 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DoxOnBox/DoxOnBox-Prefix.pch";
+				INFOPLIST_FILE = "DoxOnBox/DoxOnBox-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EF06783815BB467F007EA819 /* Build configuration list for PBXProject "DoxOnBox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF06786315BB4680007EA819 /* Debug */,
+				EF06786415BB4680007EA819 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EF06786515BB4680007EA819 /* Build configuration list for PBXNativeTarget "DoxOnBox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF06786615BB4680007EA819 /* Debug */,
+				EF06786715BB4680007EA819 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EF06783515BB467F007EA819 /* Project object */;
+}

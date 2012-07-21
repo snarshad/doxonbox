@@ -1,0 +1,46 @@
+# Ignore common tool auto-generated files.
+*~
+*.swp
+*.DS_Store?
+.DS_Store
+ehthumbs.db
+Thumbs.db
+*.pyc
+.gdb_history
+tags
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+# Xcode
+build/*
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+*.xcworkspace
+!default.xcworkspace
+xcuserdata
+
+build
+profile
+*.moved-aside
+
+#VIM
+.*.sw[a-z]
+*.un~
+Session.vim
+
+
+#Project specific
+!DeveloperSettings.xcconfig
+!.gitignore
+*.orig
