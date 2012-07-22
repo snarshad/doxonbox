@@ -72,8 +72,16 @@
 
 - (void)openLoginView
 {
-    [self.view addSubview:self.boxLoginController.view];
-    [self addChildViewController:self.boxLoginController];
+    if (![BoxLoginViewController userSignedIn])
+    {
+        [self.view addSubview:self.boxLoginController.view];
+        [self addChildViewController:self.boxLoginController];
+    }
+    else
+    {
+        [self addChildViewController:self.pageViewController];
+        [self.view addSubview:self.pageViewController.view];
+    }
 }
 
 - (void)viewDidLoad
