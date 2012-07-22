@@ -94,6 +94,7 @@
 		EF06790415BBA3CC007EA819 /* DXStringPaginator.m in Sources */ = {isa = PBXBuildFile; fileRef = EF06790315BBA3CB007EA819 /* DXStringPaginator.m */; };
 		EF06790615BBB496007EA819 /* planet.png in Resources */ = {isa = PBXBuildFile; fileRef = EF06790515BBB496007EA819 /* planet.png */; };
 		EF06790915BBB89B007EA819 /* DXWebSearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF06790815BBB899007EA819 /* DXWebSearchTableViewController.m */; };
+		EFFD0B7C15BC83E800F42688 /* NSString+URLUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = EFFD0B7B15BC83E800F42688 /* NSString+URLUtils.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -251,6 +252,8 @@
 		EF06790515BBB496007EA819 /* planet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = planet.png; path = DoxOnBox/planet.png; sourceTree = "<group>"; };
 		EF06790715BBB898007EA819 /* DXWebSearchTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXWebSearchTableViewController.h; sourceTree = "<group>"; };
 		EF06790815BBB899007EA819 /* DXWebSearchTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXWebSearchTableViewController.m; sourceTree = "<group>"; };
+		EFFD0B7A15BC83E800F42688 /* NSString+URLUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLUtils.h"; sourceTree = "<group>"; };
+		EFFD0B7B15BC83E800F42688 /* NSString+URLUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLUtils.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -528,6 +531,8 @@
 		EF06784915BB467F007EA819 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EFFD0B7A15BC83E800F42688 /* NSString+URLUtils.h */,
+				EFFD0B7B15BC83E800F42688 /* NSString+URLUtils.m */,
 				EF06784A15BB467F007EA819 /* DoxOnBox-Info.plist */,
 				EF06784B15BB467F007EA819 /* InfoPlist.strings */,
 				EF06784E15BB467F007EA819 /* main.m */,
@@ -708,6 +713,7 @@
 				EF06790415BBA3CC007EA819 /* DXStringPaginator.m in Sources */,
 				EF06790915BBB89B007EA819 /* DXWebSearchTableViewController.m in Sources */,
 				BC5F944A15BBCCF3000184E4 /* DXSettingsViewController.m in Sources */,
+				EFFD0B7C15BC83E800F42688 /* NSString+URLUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

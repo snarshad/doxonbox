@@ -10,6 +10,7 @@
 #import "NSString+ContentEncoding.h"
 #import "DXStringPaginator.h"
 #import "DXHTMLStripper.h"
+#import "NSString+URLUtils.h"
 
 @interface DXNetPageContent ()
 - (BOOL)loadAsynchronous;
@@ -65,7 +66,7 @@
 
 - (BOOL)loadSynchronous
 {
-    NSURL *url = [NSURL URLWithString:self.urlString];
+    NSURL *url = [self.urlString normalizedURL];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
 
     if (self.requestHeaders.count > 0)

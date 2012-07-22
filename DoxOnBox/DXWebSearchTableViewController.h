@@ -10,6 +10,7 @@
 @protocol DXWebSearchTableViewControllerDelegate <NSObject>
 - (void)loadingContent:(NSString *)contentURL;
 - (void)didLoadContent:(NSString *)contentString;
+- (void)didSelectURL:(NSString *)urlString;
 @end
 
 @interface DXWebSearchTableViewController : UITableViewController
