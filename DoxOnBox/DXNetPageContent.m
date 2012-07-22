@@ -7,9 +7,9 @@
 //
 
 #import "DXNetPageContent.h"
-#import "NSString+stripHtml.h"
 #import "NSString+ContentEncoding.h"
 #import "DXStringPaginator.h"
+#import "DXHTMLStripper.h"
 
 @interface DXNetPageContent ()
 - (BOOL)loadAsynchronous;
@@ -95,7 +95,7 @@
                 
                 if ([contentType rangeOfString:@"text/html"].location != NSNotFound)
                 {
-                    encodedString = [encodedString stripHtml];
+                    encodedString = [DXHTMLStripper plainTextFromHTML:encodedString];
                 }
                 
                 NSLog(@"Detected encoding %d from %@", encoding, contentType); 

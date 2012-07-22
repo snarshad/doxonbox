@@ -11,16 +11,20 @@
 static UIWebView *g_webView = nil;
 static DXHTMLStripper * g_stripper = nil;
 
+@interface DXHTMLStripper ()
+- (NSString *)plainTextFromHTML:(NSString *)originalString;
+@end
+
 @implementation DXHTMLStripper
 {
-    NSLock *_webLoadLock; 
+    NSConditionLock *_webLoadLock; 
 }
 
 - (id)init
 {
     if (self = [super init])
     {
-        _webLoadLock = [[NSLock alloc] init];
+        _webLoadLock = [[NSConditionLock alloc] initWithCondition:0];
     }
                 return self;
 }
@@ -35,25 +39,34 @@ static DXHTMLStripper * g_stripper = nil;
     return g_stripper;
 }
 
-- (NSString *)getTextFromWebview:(NSString *)originalString
+- (NSString *)plainTextFromHTML:(NSString *)originalString
 {
-    NSLog(@"getTextFromWebview: %@.  \r\n Original:%@", g_webView, self);
-    if (![NSThread isMainThread])
-    {
-        return [[self onMainAsync:NO] getTextFromWebview:originalString];
-    }
-    
+    NSLog(@"plainTextFromHTML: %@.  \r\n Original:%@", g_webView, originalString);
+
     if (!g_webView)
     {
-        g_webView = [[UIWebView alloc] initWithFrame:CGRectZero];
+        g_webView = [[[UIWebView onMainAsync:NO] alloc] initWithFrame:CGRectZero];
     }
     
     NSLog(@"loading HTML: %@", g_webView);
     
     
+//    [_webLoadLock unlo
     [g_webView loadHTMLString:originalString baseURL:nil];
     
-    NSString *text = [g_webView stringByEvaluatingJavaScriptFromString:@"document.body.innerText"];
+    NSString *text = nil;
+    
+//    if ([_webLoadLock lockBeforeDate:[NSDate dateWithTimeIntervalSinceNow:10]])
+
+    if (1)
+    {
+        NSLog(@"Success waiting for lock");
+        text = [g_webView stringByEvaluatingJavaScriptFromString:@"document.body.innerText"];
+    } else {
+        NSLog(@"Gave up waiting for lock after 10 secs");
+        text = [g_webView stringByEvaluatingJavaScriptFromString:@"document.body.innerText"];
+        
+    }
     
     NSLog(@"TEXT: %@", text);
     return text;
@@ -61,13 +74,21 @@ static DXHTMLStripper * g_stripper = nil;
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
+    [_webLoadLock unlock];
     NSLog(@"Finished Loading");
     
 }
 
-+ (NSString *)stripHTMLFrom:(NSString *)stringWithHTML
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
 {
-    return [[DXHTMLStripper sharedStripper] getTextFromWebview:stringWithHTML];
+    [_webLoadLock unlock];
+    NSLog(@"Error Loading");
+    
+}
+
++ (NSString *)plainTextFromHTML:(NSString *)stringWithHTML
+{
+    return [[DXHTMLStripper sharedStripper] plainTextFromHTML:stringWithHTML];
 }
 
 @end
