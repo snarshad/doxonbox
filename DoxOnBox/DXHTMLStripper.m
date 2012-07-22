@@ -41,54 +41,45 @@ static DXHTMLStripper * g_stripper = nil;
 
 - (NSString *)plainTextFromHTML:(NSString *)originalString
 {
-    NSLog(@"plainTextFromHTML: %@.  \r\n Original:%@", g_webView, originalString);
-
     dispatch_sync(dispatch_get_main_queue(), ^{
         if (!g_webView)
         {
             g_webView = [[UIWebView alloc] initWithFrame:CGRectZero];
         };
+        g_webView.delegate = self;
     });
     
-    NSLog(@"loading HTML: %@", g_webView);
-
     [_webLoadLock lock];
     [_webLoadLock unlockWithCondition:1];
+    g_webView.delegate = self;
     [g_webView loadHTMLString:originalString baseURL:nil];
     
     __block NSString *text = nil;
-    
-    if ([_webLoadLock lockWhenCondition:1 beforeDate:[NSDate dateWithTimeIntervalSinceNow:10]])
+
+    if ([_webLoadLock lockWhenCondition:0 beforeDate:[NSDate dateWithTimeIntervalSinceNow:10]])
     {
-        NSLog(@"Success waiting for lock");
         dispatch_sync(dispatch_get_main_queue(), ^{
         text = [g_webView stringByEvaluatingJavaScriptFromString:@"document.body.innerText"];
         });
     } else {
-        NSLog(@"Gave up waiting for lock after 10 secs");
         dispatch_sync(dispatch_get_main_queue(), ^{
             text = [g_webView stringByEvaluatingJavaScriptFromString:@"document.body.innerText"];
         });
     }
     
-    NSLog(@"TEXT: %@", text);
     return text;
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
     [_webLoadLock lock];
-    [_webLoadLock unlockWithCondition:0];
-    NSLog(@"Finished Loading");
-    
+    [_webLoadLock unlockWithCondition:0];    
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
 {
     [_webLoadLock lock];
     [_webLoadLock unlockWithCondition:0];
-    NSLog(@"Error Loading");
-    
 }
 
 + (NSString *)plainTextFromHTML:(NSString *)stringWithHTML
