@@ -29,7 +29,7 @@
     CGMutablePathRef path = CGPathCreateMutable();
     CGPathAddRect(path, NULL, self.bounds);
     CTFrameRef frame = CTFramesetterCreateFrame(framesetter, CFRangeMake(0, 0), path, NULL);
-    CTFrameDraw(frame, context);
+    //CTFrameDraw(frame, context);
 
     CFDictionaryRef dictRef = CTFrameGetFrameAttributes( frame );
     NSLog(@"dict %@", (__bridge NSDictionary *)dictRef);
