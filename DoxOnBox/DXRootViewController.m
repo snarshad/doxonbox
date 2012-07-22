@@ -184,7 +184,7 @@
     NSLog(@"File Selected");
     [popoverController dismissPopoverAnimated:YES];
     
-    NSString *urlString = [NSString stringWithFormat:@"https://www.box.com/files/%@/data", [boxFile objectId]];
+    NSString *urlString = [NSString stringWithFormat:@"https://api.box.com/2.0/files/%@/data", [boxFile objectId]];
 
     NSDictionary *headers = [NSDictionary dictionaryWithObjectsAndKeys:
                              [NSString stringWithFormat:@"BoxAuth api_key=%@&auth_token=%@", BOX_API_KEY, [BoxUser savedUser].authToken], @"Authorization: BoxAuth api_key",
