@@ -7,7 +7,6 @@
 //
 
 #import "DXAppDelegate.h"
-#import "NSString+StripHtml.h"
 
 @implementation DXAppDelegate
 
@@ -16,8 +15,6 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-
-    [NSString initializeHTMLStripper];
 
     return YES;
 }
