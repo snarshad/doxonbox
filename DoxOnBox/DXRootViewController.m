@@ -18,6 +18,7 @@
 #import "BoxAPIKey.h"
 #import "BoxUser.h"
 #import "DXSettingsViewController.h"
+#import "NSString+URLUtils.h"
 
 
 @interface DXRootViewController ()
@@ -246,6 +247,14 @@
 {
     self.modelController.delegate = self;
     [[self.modelController inBackground] loadPageWithHTMLContent:contentString];
+    [popoverController dismissPopoverAnimated:YES];
+    [activityIndicator startAnimating];
+}
+
+- (void)didSelectURL:(NSString *)urlString
+{
+    self.modelController.delegate = self;
+    [[self.modelController inBackground] loadPageWithURLString:urlString headers:nil];
     [popoverController dismissPopoverAnimated:YES];
     [activityIndicator startAnimating];
 }
