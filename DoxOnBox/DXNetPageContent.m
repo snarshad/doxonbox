@@ -102,19 +102,7 @@
             }
                 
             self.pageText = encodedString;
-        }        
-        NSArray *sentences = [DXStringPaginator sentencesInString:self.pageText];
-        for (NSString *sentence in sentences)
-        {
-            NSLog(@"** %@\r\n", sentence);
-        }
-        
-        NSArray *pages = [DXStringPaginator pagesInString:self.pageText withFont:[UIFont systemFontOfSize:18] frameSize:CGSizeMake(320, 480)];
-
-        for (NSString *page in pages)
-        {
-            NSLog(@"*PAGE* %@\r\n", page);
-        }
+        }                
         
     }
     return self.loaded;

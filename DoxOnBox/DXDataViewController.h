@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "BLColorizedTextView.h"
 
+extern const float PAGINATION_FONT_SIZE;
+
 @interface DXDataViewController : UIViewController
 
 @property (strong, nonatomic) IBOutlet UILabel *dataLabel;

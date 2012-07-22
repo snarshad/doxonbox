@@ -13,6 +13,8 @@
 
 @end
 
+const float PAGINATION_FONT_SIZE = 18.0f;
+
 @implementation DXDataViewController
 
 @synthesize dataLabel = _dataLabel;

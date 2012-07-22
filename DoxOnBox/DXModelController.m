@@ -11,6 +11,8 @@
 #import "DXDataViewController.h"
 #import "DXPageContent.h"
 #import "DXNetPageContent.h"
+#import "DXRootViewController.h"
+#import "DXStringPaginator.h"
 
 /*
  A controller object that manages a simple model -- a collection of month names.
@@ -124,11 +126,29 @@
             if ([pageToLoad loadSynchronous])
             {
                 NSLog(@"Adding loaded page");
-                [self.pageData insertObject:pageToLoad atIndex:0];
+                
+                NSString *pageText = pageToLoad.pageText;
+
+                __block CGSize pageSize;
+                UIFont *font = [UIFont systemFontOfSize:PAGINATION_FONT_SIZE];
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                    pageSize = ((DXRootViewController *)self.delegate).pageViewController.view.frame.size;
+                });
+                NSArray *pagesOfText = [DXStringPaginator pagesInString:pageText withFont:font frameSize:pageSize];
+                
+                //[self.pageData insertObject:pageToLoad atIndex:0];
+                for (unsigned int i = 0; i < [pagesOfText count]; i++)
+                {
+                    DXPageContent *page = [[DXPageContent alloc] init];
+                    page.pageText = [pagesOfText objectAtIndex:i];
+                    [self.pageData insertObject:page atIndex:i];
+                }
                 
                 if ([self.delegate respondsToSelector:@selector(pageContentLoaded:atIndex:)])
                 {
-                    [[(NSObject *)self.delegate onMainAsync:YES] pageContentLoaded:pageToLoad atIndex:0];
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [self.delegate pageContentLoaded:pageToLoad atIndex:0];
+                    });
                 }
                 
                 NSLog(@"Loaded");
