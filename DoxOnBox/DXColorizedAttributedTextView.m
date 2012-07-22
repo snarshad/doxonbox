@@ -79,7 +79,6 @@
     CFIndex numLines = CFArrayGetCount(lines);        
     CGFloat ascent, descent, leading;
     CGFloat currentHeight = 0.0;
-    CGFloat currentHeight2 = 0.0;
 
     CGContextRestoreGState(context);
     CGImageRef textImage = CGBitmapContextCreateImage(context);
@@ -88,7 +87,6 @@
     context = UIGraphicsGetCurrentContext();
     
     currentHeight = rect.origin.y;
-    currentHeight2 = rect.origin.y;
     
     int howManyGradients = [gradients count];
 
@@ -97,15 +95,14 @@
         CTLineRef line = (CTLineRef)CFArrayGetValueAtIndex(lines, index);
         CTLineGetTypographicBounds(line, &ascent,  &descent, &leading);	
         CGRect lineBounds = CTLineGetImageBounds(line, context);
-        currentHeight += lineBounds.size.height;
         
         CGFloat lineHeight = (ascent + fabsf(descent) + leading);
-        currentHeight2 += lineHeight;	
+        currentHeight += lineHeight;	
         
         CGPoint thisLineOrigin;
         CTFrameGetLineOrigins(frame, CFRangeMake(index, 1), &thisLineOrigin);
         
-        NSLog(@"Line %ld at %@ : %@ %f %f", index, NSStringFromCGPoint(thisLineOrigin), NSStringFromCGRect(lineBounds), currentHeight, currentHeight2);
+        NSLog(@"Line %ld at %@ : %@ %f", index, NSStringFromCGPoint(thisLineOrigin), NSStringFromCGRect(lineBounds), currentHeight);
 
         int gradientIndex = index % howManyGradients;
         BLGradientRef *gradient = [gradients objectAtIndex:gradientIndex];
@@ -113,11 +110,11 @@
         NSLog(@"%f", lineHeight);
 
         //figure out where to get the clipping path, based on the appropriate section of the text image
-        //TODO: THIS IS WRONG
-        CGRect textClipRect = CGRectMake(0.0f, 0.0f-thisLineOrigin.y, size.width, size.height);
+        //TODO: THIS IS WRONG - but now it's close!
+        CGRect textClipRect = CGRectMake(0.0f, 0.0f-thisLineOrigin.y-lineBounds.origin.y, size.width, size.height);
 
         //where to draw the gradient
-        CGRect gradientRect = CGRectMake(0.0f, currentHeight2, size.width, lineHeight);
+        CGRect gradientRect = CGRectMake(0.0f, currentHeight, size.width, lineHeight);
 
         //create a layer in which we will draw the gradient
         CGLayerRef layer = CGLayerCreateWithContext(UIGraphicsGetCurrentContext(), CGSizeMake(size.width, lineHeight), NULL);
