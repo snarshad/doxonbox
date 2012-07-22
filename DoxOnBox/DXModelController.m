@@ -130,7 +130,7 @@
                 NSString *pageText = pageToLoad.pageText;
 
                 __block CGSize pageSize;
-                UIFont *font = [UIFont systemFontOfSize:PAGINATION_FONT_SIZE];
+                UIFont *font = READER_FONT;
                 dispatch_sync(dispatch_get_main_queue(), ^{
                     pageSize = ((DXRootViewController *)self.delegate).pageViewController.view.frame.size;
                 });

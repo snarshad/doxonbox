@@ -61,6 +61,10 @@
 		BC5F943015BB661E000184E4 /* BoxFolderIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC5F93DC15BB518F000184E4 /* BoxFolderIcon@2x.png */; };
 		BC5F943115BB661E000184E4 /* BoxTopBarLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = BC5F93DD15BB518F000184E4 /* BoxTopBarLogo.png */; };
 		BC5F943215BB661E000184E4 /* BoxTopBarLogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC5F93DE15BB518F000184E4 /* BoxTopBarLogo@2x.png */; };
+		BC5F944315BBBCB2000184E4 /* OpenDyslexic-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = BC5F943F15BBBCB2000184E4 /* OpenDyslexic-Bold.otf */; };
+		BC5F944415BBBCB2000184E4 /* OpenDyslexic-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = BC5F944015BBBCB2000184E4 /* OpenDyslexic-BoldItalic.otf */; };
+		BC5F944515BBBCB2000184E4 /* OpenDyslexic-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = BC5F944115BBBCB2000184E4 /* OpenDyslexic-Italic.otf */; };
+		BC5F944615BBBCB2000184E4 /* OpenDyslexic-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = BC5F944215BBBCB2000184E4 /* OpenDyslexic-Regular.otf */; };
 		EF06784315BB467F007EA819 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF06784215BB467F007EA819 /* UIKit.framework */; };
 		EF06784515BB467F007EA819 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF06784415BB467F007EA819 /* Foundation.framework */; };
 		EF06784715BB467F007EA819 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF06784615BB467F007EA819 /* CoreGraphics.framework */; };
@@ -190,6 +194,10 @@
 		BC5F93DD15BB518F000184E4 /* BoxTopBarLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BoxTopBarLogo.png; sourceTree = "<group>"; };
 		BC5F93DE15BB518F000184E4 /* BoxTopBarLogo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BoxTopBarLogo@2x.png"; sourceTree = "<group>"; };
 		BC5F941515BB52F6000184E4 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		BC5F943F15BBBCB2000184E4 /* OpenDyslexic-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenDyslexic-Bold.otf"; sourceTree = "<group>"; };
+		BC5F944015BBBCB2000184E4 /* OpenDyslexic-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenDyslexic-BoldItalic.otf"; sourceTree = "<group>"; };
+		BC5F944115BBBCB2000184E4 /* OpenDyslexic-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenDyslexic-Italic.otf"; sourceTree = "<group>"; };
+		BC5F944215BBBCB2000184E4 /* OpenDyslexic-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenDyslexic-Regular.otf"; sourceTree = "<group>"; };
 		EF06783E15BB467F007EA819 /* DoxOnBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoxOnBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF06784215BB467F007EA819 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		EF06784415BB467F007EA819 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -535,6 +543,10 @@
 		EF0678D815BB8E35007EA819 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				BC5F943F15BBBCB2000184E4 /* OpenDyslexic-Bold.otf */,
+				BC5F944015BBBCB2000184E4 /* OpenDyslexic-BoldItalic.otf */,
+				BC5F944115BBBCB2000184E4 /* OpenDyslexic-Italic.otf */,
+				BC5F944215BBBCB2000184E4 /* OpenDyslexic-Regular.otf */,
 				EF0678DD15BB9026007EA819 /* background7.jpeg */,
 				EF0678D915BB8E53007EA819 /* linen_dark_1024.png */,
 			);
@@ -607,6 +619,10 @@
 				BC5F940A15BB518F000184E4 /* README.md in Resources */,
 				EF0678DA15BB8E53007EA819 /* linen_dark_1024.png in Resources */,
 				EF0678DE15BB9026007EA819 /* background7.jpeg in Resources */,
+				BC5F944315BBBCB2000184E4 /* OpenDyslexic-Bold.otf in Resources */,
+				BC5F944415BBBCB2000184E4 /* OpenDyslexic-BoldItalic.otf in Resources */,
+				BC5F944515BBBCB2000184E4 /* OpenDyslexic-Italic.otf in Resources */,
+				BC5F944615BBBCB2000184E4 /* OpenDyslexic-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

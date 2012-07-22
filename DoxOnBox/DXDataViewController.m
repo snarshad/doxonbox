@@ -13,7 +13,7 @@
 
 @end
 
-const float PAGINATION_FONT_SIZE = 18.0f;
+const float PAGINATION_FONT_SIZE = 16.0f;
 
 @implementation DXDataViewController
 
@@ -34,7 +34,7 @@ const float PAGINATION_FONT_SIZE = 18.0f;
     self.textView.colors = colors;
     self.textView.lineBreakMode = UILineBreakModeWordWrap;
     
-    self.textView.font = [UIFont systemFontOfSize:18.0f];
+    self.textView.font = READER_FONT;
 
     self.backgroundView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background7.jpeg"]];
     

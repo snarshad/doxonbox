@@ -14,8 +14,21 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
-
+    // List all fonts on iPhone
+//    NSArray *familyNames = [[NSArray alloc] initWithArray:[UIFont familyNames]];
+//    NSArray *allFontNames;
+//    for (NSString *familyName in familyNames)
+//    {
+//        NSLog(@"Family name: %@", familyName);
+//        allFontNames = [[NSArray alloc] initWithArray:
+//                        [UIFont fontNamesForFamilyName:
+//                         familyName]];
+//        
+//        for (NSString *name in allFontNames)
+//        {
+//            NSLog(@"    Font name: %@", name);
+//        }
+//    }
     return YES;
 }
 
