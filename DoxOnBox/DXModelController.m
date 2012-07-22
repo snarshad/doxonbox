@@ -142,6 +142,7 @@
                 {
                     DXPageContent *page = [[DXPageContent alloc] init];
                     page.pageText = [pagesOfText objectAtIndex:i];
+                    page.pageTitle = [NSString stringWithFormat:@"%@ (%d/%d)", pageToLoad.pageTitle, i+1, pagesOfText.count];
                     [self.pageData insertObject:page atIndex:i];
                 }
                 
@@ -162,28 +163,40 @@
 
 - (void)loadPageWithHTMLContent:(NSString *)contentString
 {
-    NSString *plainString = [DXHTMLStripper plainTextFromHTML:contentString];
+    NSDictionary *content = [DXHTMLStripper plainTextFromHTML:contentString];
 
     __block CGSize pageSize;
     UIFont *font = READER_FONT;
-    dispatch_sync(dispatch_get_main_queue(), ^{
+
+    if ([NSThread isMainThread])
+    {
         pageSize = ((DXRootViewController *)self.delegate).pageViewController.view.frame.size;
-    });
+    } else {
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            pageSize = ((DXRootViewController *)self.delegate).pageViewController.view.frame.size;
+        });
+    }
     
-    NSArray *pagesOfText = [DXStringPaginator pagesInString:plainString withFont:font frameSize:pageSize];
+    NSArray *pagesOfText = [DXStringPaginator pagesInString:[content valueForKey:@"body"] withFont:font frameSize:pageSize];
     
     for (unsigned int i = 0; i < [pagesOfText count]; i++)
     {
         DXPageContent *page = [[DXPageContent alloc] init];
         page.pageText = [pagesOfText objectAtIndex:i];
+        page.pageTitle = [NSString stringWithFormat:@"%@ (%d/%d)", [content valueForKey:@"title"], i+1, pagesOfText.count];
         [self.pageData insertObject:page atIndex:i];
     }
     
     if ([self.delegate respondsToSelector:@selector(pageContentLoaded:atIndex:)])
     {
-        dispatch_async(dispatch_get_main_queue(), ^{
+        if ([NSThread isMainThread])
+        {
             [self.delegate pageContentLoaded:[self.pageData objectAtIndex:0] atIndex:0];
-        });
+        } else {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.delegate pageContentLoaded:[self.pageData objectAtIndex:0] atIndex:0];
+            });
+        }
     }
     
 }

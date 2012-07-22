@@ -17,6 +17,7 @@
 {
     NSMutableArray	*filteredListContent;	// The content filtered as a result of a search.
     BOOL _isSearching;
+    BOOL _isLoading;
     NSString *lastSearchedText;
 }
 @synthesize searchTableDelegate;
@@ -64,23 +65,25 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    LOG_API;
+    NSLog(@"%d", filteredListContent.count);
     return filteredListContent.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     LOG_API;
-    static NSString *CellIdentifier = @"webSearchCell";
+    static NSString *CellIdentifier = @"xwebSearchCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"webSearchCell"];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"xwebSearchCell"];
     }
 
     cell.textLabel.text = [[filteredListContent objectAtIndex:indexPath.row] valueForKey:@"title"];
-    
-    NSLog(@"New Cell at %d: %@", indexPath.row, cell.textLabel.text);
-    
     cell.detailTextLabel.text = @"Wikipedia";
+    
+    NSLog(@"New Cell at %d: %@ : %@", indexPath.row, cell.textLabel.text, cell.detailTextLabel.text);
+    
         
     return cell;
 }
@@ -90,15 +93,30 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     LOG_API;
+    
+    if (_isLoading)
+        return;
+    
+    _isLoading = YES;
+
+    
     NSString *pageid = [[filteredListContent objectAtIndex:indexPath.row] valueForKey:@"pageid"];
 //    NSString *title = [[filteredListContent objectAtIndex:indexPath.row] valueForKey:@"title"];
     
+    
+    
     NSString *pageContentURL = [NSString stringWithFormat:@"http://en.wikipedia.org/w/api.php?action=query&prop=revisions&pageids=%@&rvprop=content&rvparse&format=json", pageid];
+
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [searchTableDelegate loadingContent:pageContentURL];
+    });
+
     dispatch_queue_t taskQ = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     dispatch_async(taskQ, ^{
         NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:
                                                       pageContentURL
                                                       ]];
+
         NSDictionary *results = nil;
         NSError *parseError = nil;
         id jsonObject = data ? [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&parseError] : nil;
@@ -110,8 +128,11 @@
             NSString *contentString = [[[[[results allValues] lastObject] valueForKey:@"revisions"] lastObject] valueForKey:@"*"];
 //            NSLog(@"Page content: %@", [[[[[results allValues] lastObject] valueForKey:@"revisions"] lastObject] valueForKey:@"*"]);
             
-            [searchTableDelegate didLoadContent:contentString];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [searchTableDelegate didLoadContent:contentString];
+            });
         }
+        _isLoading = NO;
     });
 }
 
@@ -224,6 +245,7 @@
     LOG_API;
     NSLog(@"Should for string: %@", searchString);
 
+    return YES;
     if (![lastSearchedText isEqualToString:searchString])
     {
         [self searchBar:controller.searchBar textDidChange:searchString];

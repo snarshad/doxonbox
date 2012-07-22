@@ -32,6 +32,7 @@
 @synthesize pageViewController = _pageViewController;
 @synthesize modelController = _modelController;
 @synthesize boxLoginController;
+@synthesize activityIndicator;
 
 
 
@@ -121,6 +122,7 @@
 
 - (void)viewDidUnload
 {
+    [self setActivityIndicator:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -231,6 +233,7 @@
 #pragma mark DXModelDelegate
 - (void)pageContentLoaded:(DXPageContent *)pageContent atIndex:(NSInteger)index
 {
+    [activityIndicator stopAnimating];
     NSLog(@"Going to flip");
     NSArray *newViewControllers = [NSArray arrayWithObject:[self.modelController viewControllerAtIndex:index storyboard:self.storyboard]];
     [self.pageViewController setViewControllers:newViewControllers direction:UIPageViewControllerNavigationDirectionReverse animated:YES completion:^(BOOL finished) {
@@ -242,7 +245,15 @@
 - (void)didLoadContent:(NSString *)contentString
 {
     self.modelController.delegate = self;
-    [self.modelController loadPageWithHTMLContent:contentString];
+    [[self.modelController inBackground] loadPageWithHTMLContent:contentString];
+    [popoverController dismissPopoverAnimated:YES];
+    [activityIndicator startAnimating];
+}
+
+- (void)loadingContent:(NSString *)contentURL
+{
+    [activityIndicator startAnimating];
+    [popoverController dismissPopoverAnimated:YES];
 }
 
 

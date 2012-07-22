@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 @protocol DXWebSearchTableViewControllerDelegate <NSObject>
+- (void)loadingContent:(NSString *)contentURL;
 - (void)didLoadContent:(NSString *)contentString;
 @end
 
