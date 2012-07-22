@@ -61,6 +61,7 @@ static DXHTMLStripper * g_stripper = nil;
         dispatch_sync(dispatch_get_main_queue(), ^{
         text = [g_webView stringByEvaluatingJavaScriptFromString:@"document.body.innerText"];
         });
+        [_webLoadLock unlock];
     } else {
         dispatch_sync(dispatch_get_main_queue(), ^{
             text = [g_webView stringByEvaluatingJavaScriptFromString:@"document.body.innerText"];
