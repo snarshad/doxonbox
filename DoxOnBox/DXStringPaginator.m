@@ -68,7 +68,7 @@ static DXStringPaginator *g_stringPaginator = nil;
         CGSize textSize = [onePageString sizeWithFont:font 
                                                constrainedToSize:constraintSize lineBreakMode:UILineBreakModeWordWrap];
         
-        if (textSize.height > frameSize.height - 90)
+        if (textSize.height > frameSize.height - font.pointSize * (font.pointSize/2))
         {
             [allPages addObject:onePageString];
             onePageString = [NSMutableString string];

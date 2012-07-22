@@ -68,7 +68,7 @@ const float PAGINATION_FONT_SIZE = 16.0f;
 
 - (void)switchFont
 {
-    self.textView.font = [[NSUserDefaults standardUserDefaults] boolForKey:@"DXUserDefaultsUseDyslexicMode"] ? [UIFont fontWithName:@"OpenDyslexic-Regular" size:16.0f] : [UIFont systemFontOfSize:18.0f];
+    self.textView.font = [[NSUserDefaults standardUserDefaults] boolForKey:@"DXUserDefaultsUseDyslexicMode"] ? [UIFont fontWithName:@"OpenDyslexic-Regular" size:[[NSUserDefaults standardUserDefaults] floatForKey:@"DXUserDefaultsFontSize"] - 2.0f] : [UIFont fontWithName:@"TimesNewRomanPSMT" size:[[NSUserDefaults standardUserDefaults] floatForKey:@"DXUserDefaultsFontSize"]];
 }
 
 - (void)viewDidUnload
@@ -95,7 +95,7 @@ const float PAGINATION_FONT_SIZE = 16.0f;
 
     //set up lexical display view
         NSMutableAttributedString *str = [NSAttributedString lexicallyHighlightedStringForString:[self.dataObject pageText]];
-        UIFont *font = [[NSUserDefaults standardUserDefaults] boolForKey:@"DXUserDefaultsUseDyslexicMode"] ? [UIFont fontWithName:@"OpenDyslexic-Regular" size:16.0f] : [UIFont systemFontOfSize:18.0f];
+        UIFont *font = [[NSUserDefaults standardUserDefaults] boolForKey:@"DXUserDefaultsUseDyslexicMode"] ? [UIFont fontWithName:@"OpenDyslexic-Regular" size:[[NSUserDefaults standardUserDefaults] floatForKey:@"DXUserDefaultsFontSize"] - 2.0f] : [UIFont fontWithName:@"TimesNewRomanPSMT" size:[[NSUserDefaults standardUserDefaults] floatForKey:@"DXUserDefaultsFontSize"]];
         CTFontRef ctfont = CTFontCreateWithName((__bridge CFStringRef)font.fontName, font.pointSize, NULL);
         [str addAttribute:(NSString *)kCTFontAttributeName value:(__bridge UIFont *)ctfont range:NSMakeRange(0, str.length)];
         self.lexicalTextView.attributedText = str;        
