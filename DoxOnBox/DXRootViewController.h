@@ -9,10 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "BoxLoginViewController.h"
 #import "DXBoxBrowserTableViewController.h"
+#import "DXModelController.h"
 
 @class BoxLoginNavigationController, BoxBrowserTableViewController;
 
-@interface DXRootViewController : UIViewController <UIPageViewControllerDelegate, BoxLoginViewControllerDelegate, DXBoxBrowserTableViewControllerDelegate>
+@interface DXRootViewController : UIViewController <UIPageViewControllerDelegate, BoxLoginViewControllerDelegate, DXBoxBrowserTableViewControllerDelegate, DXModelDelegate>
 
 @property (strong, nonatomic) UIPageViewController *pageViewController;
 @property (strong, nonatomic) BoxLoginViewController *boxLoginController;

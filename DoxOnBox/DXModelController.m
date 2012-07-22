@@ -31,6 +31,7 @@
 }
 
 @synthesize pageData = _pageData;
+@synthesize delegate;
 
 
 - (void)generateTestData
@@ -124,6 +125,12 @@
             {
                 NSLog(@"Adding loaded page");
                 [self.pageData insertObject:pageToLoad atIndex:0];
+                
+                if ([self.delegate respondsToSelector:@selector(pageContentLoaded:atIndex:)])
+                {
+                    [[(NSObject *)self.delegate onMainAsync:YES] pageContentLoaded:pageToLoad atIndex:0];
+                }
+                
                 NSLog(@"Loaded");
             } else {
                 NSLog(@"Failed");

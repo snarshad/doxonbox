@@ -8,9 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@class DXDataViewController;
+@class DXDataViewController, DXPageContent;
+
+@protocol DXModelDelegate <NSObject>
+- (void)pageContentLoaded:(DXPageContent *)pageContent atIndex:(NSInteger)index;
+@end
 
 @interface DXModelController : NSObject <UIPageViewControllerDataSource>
+@property (weak) id<DXModelDelegate> delegate;
 
 - (DXDataViewController *)viewControllerAtIndex:(NSUInteger)index storyboard:(UIStoryboard *)storyboard;
 - (NSUInteger)indexOfViewController:(DXDataViewController *)viewController;

@@ -192,9 +192,20 @@
 //                             [NSString stringWithFormat:@"BoxAuth api_key=%@&auth_token=%@", BOX_API_KEY, [BoxUser savedUser].authToken], @"Authorization: BoxAuth api_key",
 //                             nil];
     
+    self.modelController.delegate = self;
     [self.modelController loadPageWithURLString:urlString headers:nil];
     
 }
+#pragma mark DXModelDelegate
+- (void)pageContentLoaded:(DXPageContent *)pageContent atIndex:(NSInteger)index
+{
+    NSLog(@"Going to flip");
+    NSArray *newViewControllers = [NSArray arrayWithObject:[self.modelController viewControllerAtIndex:index storyboard:self.storyboard]];
+    [self.pageViewController setViewControllers:newViewControllers direction:UIPageViewControllerNavigationDirectionReverse animated:YES completion:^(BOOL finished) {
+        NSLog(@"Done flipping");
+    }];
+}
+
 
 #pragma mark -
 
