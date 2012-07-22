@@ -75,7 +75,7 @@
     [lookupQueue addOperationWithBlock:
      ^{
          __block CGSize pageSize;
-         UIFont *font = [[NSUserDefaults standardUserDefaults] boolForKey:@"DXUserDefaultsUseDyslexicMode"] ? [UIFont fontWithName:@"OpenDyslexic-Regular" size:16.0f] : [UIFont systemFontOfSize:18.0f];
+         UIFont *font = [[NSUserDefaults standardUserDefaults] boolForKey:@"DXUserDefaultsUseDyslexicMode"] ? [UIFont fontWithName:@"OpenDyslexic-Regular" size:[[NSUserDefaults standardUserDefaults] floatForKey:@"DXUserDefaultsFontSize"]-2.0f] : [UIFont fontWithName:@"TimesNewRomanPSMT" size:[[NSUserDefaults standardUserDefaults] floatForKey:@"DXUserDefaultsFontSize"]];
          dispatch_sync(dispatch_get_main_queue(), ^{
              pageSize = ((DXRootViewController *)self.delegate).pageViewController.view.frame.size;
          });
@@ -165,7 +165,7 @@
                 self.lastFetchedString = pageText;
 
                 __block CGSize pageSize;
-                UIFont *font = [[NSUserDefaults standardUserDefaults] boolForKey:@"DXUserDefaultsUseDyslexicMode"] ? [UIFont fontWithName:@"OpenDyslexic-Regular" size:16.0f] : [UIFont systemFontOfSize:18.0f];
+                UIFont *font = [[NSUserDefaults standardUserDefaults] boolForKey:@"DXUserDefaultsUseDyslexicMode"] ? [UIFont fontWithName:@"OpenDyslexic-Regular" size:[[NSUserDefaults standardUserDefaults] floatForKey:@"DXUserDefaultsFontSize"] - 2.0f] : [UIFont fontWithName:@"TimesNewRomanPSMT" size:[[NSUserDefaults standardUserDefaults] floatForKey:@"DXUserDefaultsFontSize"]];
                 dispatch_sync(dispatch_get_main_queue(), ^{
                     pageSize = ((DXRootViewController *)self.delegate).pageViewController.view.frame.size;
                 });

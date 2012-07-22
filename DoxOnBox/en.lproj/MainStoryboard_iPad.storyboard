@@ -344,6 +344,9 @@
                         </connections>
                     </tableView>
                     <value key="contentSizeForViewInPopover" type="size" width="320" height="460"/>
+                    <connections>
+                        <outlet property="fontSizePicker" destination="Rcq-Dy-Oa3" id="7qi-fP-X7B"/>
+                    </connections>
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="75" y="141"/>

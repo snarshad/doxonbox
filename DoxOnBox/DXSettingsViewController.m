@@ -28,6 +28,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -107,6 +108,21 @@
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
     return 10;
+}
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+    NSInteger size = row * 2 + 14;
+    return [[NSNumber numberWithInt:size] stringValue];
+}
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+{
+    [[NSUserDefaults standardUserDefaults] setInteger:row * 2 + 14 forKey:@"DXUserDefaultsFontSize"];
+}
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    NSInteger row = ([[NSUserDefaults standardUserDefaults] integerForKey:@"DXUserDefaultsFontSize"] - 14)/2;
+    [self.fontSizePicker selectRow:row inComponent:0 animated:NO];
 }
 /*
 // Override to support conditional editing of the table view.
