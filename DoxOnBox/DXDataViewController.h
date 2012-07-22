@@ -19,5 +19,6 @@ extern const float PAGINATION_FONT_SIZE;
 @property (strong, nonatomic) IBOutlet BLColorizedTextView *textView;
 @property (strong, nonatomic) IBOutlet UIView *backgroundView;
 @property (strong, nonatomic) id dataObject;
+- (void)switchFont;
 
 @end

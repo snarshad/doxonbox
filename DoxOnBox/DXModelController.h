@@ -16,6 +16,7 @@
 
 @interface DXModelController : NSObject <UIPageViewControllerDataSource>
 @property (weak) id<DXModelDelegate> delegate;
+@property (strong) NSString *lastFetchedString;
 
 - (DXDataViewController *)viewControllerAtIndex:(NSUInteger)index storyboard:(UIStoryboard *)storyboard;
 - (NSUInteger)indexOfViewController:(DXDataViewController *)viewController;

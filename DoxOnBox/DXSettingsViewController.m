@@ -92,13 +92,13 @@
     
     return cell;
 }
-- (IBAction)toggleDyslexicMode:(id)sender
+- (IBAction)toggleDyslexicMode:(UISwitch *)sender
 {
-    [[NSUserDefaults standardUserDefaults] setBool:[sender state] forKey:@"DXUserDefaultUseDyslexicMode"];
+    [[NSUserDefaults standardUserDefaults] setBool:sender.on forKey:@"DXUserDefaultsUseDyslexicMode"];
 }
-- (IBAction)toggleLexicalMode:(id)sender
+- (IBAction)toggleLexicalMode:(UISwitch *)sender
 {
-    [[NSUserDefaults standardUserDefaults] setBool:[sender state] forKey:@"DXUserDefaultsUseLexicalColoring"];
+    [[NSUserDefaults standardUserDefaults] setBool:sender.on forKey:@"DXUserDefaultsUseLexicalColoring"];
 }
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {

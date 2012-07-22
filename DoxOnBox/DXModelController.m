@@ -34,6 +34,7 @@
 
 @synthesize pageData = _pageData;
 @synthesize delegate;
+@synthesize lastFetchedString;
 
 
 - (void)generateTestData
@@ -60,10 +61,42 @@
         
         _pageData = [[NSMutableArray alloc] initWithCapacity:10]; 
         [self generateTestData];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userDefaultsChanged:) name:NSUserDefaultsDidChangeNotification object:[NSUserDefaults standardUserDefaults]];
     }
     return self;
 }
-
+- (void)userDefaultsChanged:(NSNotification *)notification
+{
+    if (self.lastFetchedString == nil)
+    {
+        return; // nothing to do here
+    }
+    [lookupQueue addOperationWithBlock:
+     ^{
+         __block CGSize pageSize;
+         UIFont *font = [[NSUserDefaults standardUserDefaults] boolForKey:@"DXUserDefaultsUseDyslexicMode"] ? [UIFont fontWithName:@"OpenDyslexic-Regular" size:16.0f] : [UIFont systemFontOfSize:18.0f];
+         dispatch_sync(dispatch_get_main_queue(), ^{
+             pageSize = ((DXRootViewController *)self.delegate).pageViewController.view.frame.size;
+         });
+         NSArray *pagesOfText = [DXStringPaginator pagesInString:self.lastFetchedString withFont:font frameSize:pageSize];
+             
+         //[self.pageData insertObject:pageToLoad atIndex:0];
+         for (unsigned int i = 0; i < [pagesOfText count]; i++)
+         {
+             DXPageContent *page = [[DXPageContent alloc] init];
+             page.pageText = [pagesOfText objectAtIndex:i];
+             [self.pageData insertObject:page atIndex:i];
+         }
+         
+         if ([self.delegate respondsToSelector:@selector(pageContentLoaded:atIndex:)])
+         {
+             dispatch_async(dispatch_get_main_queue(), ^{
+                 [self.delegate pageContentLoaded:[self.pageData objectAtIndex:0] atIndex:0];
+             });
+         }
+     }];
+}
+    
 - (DXDataViewController *)viewControllerAtIndex:(NSUInteger)index storyboard:(UIStoryboard *)storyboard
 {   
     NSLog(@"viewControllerAtIndex %d", index);
@@ -128,9 +161,10 @@
                 NSLog(@"Adding loaded page");
                 
                 NSString *pageText = pageToLoad.pageText;
+                self.lastFetchedString = pageText;
 
                 __block CGSize pageSize;
-                UIFont *font = READER_FONT;
+                UIFont *font = [[NSUserDefaults standardUserDefaults] boolForKey:@"DXUserDefaultsUseDyslexicMode"] ? [UIFont fontWithName:@"OpenDyslexic-Regular" size:16.0f] : [UIFont systemFontOfSize:18.0f];
                 dispatch_sync(dispatch_get_main_queue(), ^{
                     pageSize = ((DXRootViewController *)self.delegate).pageViewController.view.frame.size;
                 });
