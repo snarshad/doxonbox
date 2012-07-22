@@ -22,19 +22,19 @@
     {
         if (tag == NSLinguisticTagNoun || tag == NSLinguisticTagVerb)
         {
-            [ret setAttributes:[NSDictionary dictionaryWithObject:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0] forKey:(NSString *)kCTForegroundColorAttributeName] range:tokenRange];
+            [ret setAttributes:[NSDictionary dictionaryWithObject:(id)[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0].CGColor forKey:(NSString *)kCTForegroundColorAttributeName] range:tokenRange];
         }
         else if (tag == NSLinguisticTagPreposition || tag == NSLinguisticTagPronoun || tag == NSLinguisticTagInterjection || tag == NSLinguisticTagAdjective)
         {
-            [ret setAttributes:[NSDictionary dictionaryWithObject:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.75] forKey:(NSString *)kCTForegroundColorAttributeName] range:tokenRange];
+            [ret setAttributes:[NSDictionary dictionaryWithObject:(id)[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.75].CGColor forKey:(NSString *)kCTForegroundColorAttributeName] range:tokenRange];
         }
         else if (tag == NSLinguisticTagPunctuation || tag == NSLinguisticTagParticle || tag == NSLinguisticTagInterjection || tag == NSLinguisticTagAdverb)
         {
-            [ret setAttributes:[NSDictionary dictionaryWithObject:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.5] forKey:(NSString *)kCTForegroundColorAttributeName] range:tokenRange];
+            [ret setAttributes:[NSDictionary dictionaryWithObject:(id)[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.5].CGColor forKey:(NSString *)kCTForegroundColorAttributeName] range:tokenRange];
         }
         else if (tag == NSLinguisticTagClassifier || tag == NSLinguisticTagConjunction || tag == NSLinguisticTagDeterminer || tag == NSLinguisticTagOtherWord)
         {
-            [ret setAttributes:[NSDictionary dictionaryWithObject:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.25] forKey:(NSString *)kCTForegroundColorAttributeName] range:tokenRange];
+            [ret setAttributes:[NSDictionary dictionaryWithObject:(id)[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.25].CGColor forKey:(NSString *)kCTForegroundColorAttributeName] range:tokenRange];
         }
     }];
     return ret;
