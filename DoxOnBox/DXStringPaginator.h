@@ -10,5 +10,6 @@
 
 @interface DXStringPaginator : NSObject
 + (NSArray *)sentencesInString:(NSString *)string;
++ (NSArray *)pagesInString:(NSString *)string withFont:(UIFont *)font frameSize:(CGSize)frameSize;
 
 @end
