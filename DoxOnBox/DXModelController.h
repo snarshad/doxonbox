@@ -15,4 +15,6 @@
 - (DXDataViewController *)viewControllerAtIndex:(NSUInteger)index storyboard:(UIStoryboard *)storyboard;
 - (NSUInteger)indexOfViewController:(DXDataViewController *)viewController;
 
+- (void)loadPageWithURLString:(NSString *)urlString headers:(NSDictionary *)headers;
+
 @end

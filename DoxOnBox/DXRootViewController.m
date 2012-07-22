@@ -13,7 +13,11 @@
 #import "DXDataViewController.h"
 
 #import "BoxLoginViewController.h"
+#import "BoxFile.h"
 #import "DXBoxBrowserTableViewController.h"
+#import "BoxAPIKey.h"
+#import "BoxUser.h"
+
 
 @interface DXRootViewController ()
 @property (readonly, strong, nonatomic) DXModelController *modelController;
@@ -171,6 +175,15 @@
 {
     NSLog(@"File Selected");
     [popoverController dismissPopoverAnimated:YES];
+    
+    NSString *urlString = [NSString stringWithFormat:@"https://www.box.com/files/%@/data", [boxFile objectId]];
+
+    NSDictionary *headers = [NSDictionary dictionaryWithObjectsAndKeys:
+                             [NSString stringWithFormat:@"BoxAuth api_key=%@&auth_token=%@", BOX_API_KEY, [BoxUser savedUser].authToken], @"Authorization: BoxAuth api_key",
+                             nil];
+    
+    [self.modelController loadPageWithURLString:urlString headers:headers];
+    
 }
 
 #pragma mark -
@@ -185,9 +198,7 @@
         DXBoxBrowserTableViewController *vc = (DXBoxBrowserTableViewController *)[[segue destinationViewController] visibleViewController];
         
         // Pass any objects to the view controller here, like...
-        [vc setBoxDelegate:self];
-        
-        
+        [vc setBoxDelegate:self];        
     }    
 }
 

@@ -10,6 +10,7 @@
 
 #import "DXDataViewController.h"
 #import "DXPageContent.h"
+#import "DXNetPageContent.h"
 
 /*
  A controller object that manages a simple model -- a collection of month names.
@@ -25,6 +26,9 @@
 @end
 
 @implementation DXModelController
+{
+    NSOperationQueue *lookupQueue;
+}
 
 @synthesize pageData = _pageData;
 
@@ -47,6 +51,10 @@
     if (self) {
         // Create the data model.
 //        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+
+        lookupQueue = [[NSOperationQueue alloc] init];
+        [lookupQueue setMaxConcurrentOperationCount:5];
+        
         _pageData = [[NSMutableArray alloc] initWithCapacity:10]; 
         [self generateTestData];
     }
@@ -55,6 +63,7 @@
 
 - (DXDataViewController *)viewControllerAtIndex:(NSUInteger)index storyboard:(UIStoryboard *)storyboard
 {   
+    NSLog(@"viewControllerAtIndex %d", index);
     // Return the data view controller for the given index.
     if (([self.pageData count] == 0) || (index >= [self.pageData count])) {
         return nil;
@@ -77,6 +86,7 @@
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
 {
+    NSLog(@"viewControllerBeforeViewController");
     NSUInteger index = [self indexOfViewController:(DXDataViewController *)viewController];
     if ((index == 0) || (index == NSNotFound)) {
         return nil;
@@ -88,6 +98,7 @@
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController
 {
+    NSLog(@"viewControllerAfterViewController");
     NSUInteger index = [self indexOfViewController:(DXDataViewController *)viewController];
     if (index == NSNotFound) {
         return nil;
@@ -99,5 +110,28 @@
     }
     return [self viewControllerAtIndex:index storyboard:viewController.storyboard];
 }
+
+- (void)loadPageWithURLString:(NSString *)urlString headers:(NSDictionary *)headers
+{
+    if (urlString)
+    {
+        DXNetPageContent *pageToLoad = [[DXNetPageContent alloc] initWithURL:urlString];
+        [pageToLoad setRequestHeaders:headers];
+
+        [lookupQueue addOperationWithBlock:^{
+            NSLog(@"Loading");
+            if ([pageToLoad loadSynchronous])
+            {
+                NSLog(@"Adding loaded page");
+                [self.pageData insertObject:pageToLoad atIndex:0];
+                NSLog(@"Loaded");
+            } else {
+                NSLog(@"Failed");
+            }
+        }];
+    }
+    
+}
+
 
 @end
