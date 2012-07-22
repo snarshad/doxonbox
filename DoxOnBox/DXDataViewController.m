@@ -34,11 +34,14 @@ const float PAGINATION_FONT_SIZE = 16.0f;
     self.textView.colors = colors;
     self.textView.lineBreakMode = UILineBreakModeWordWrap;
     
-    self.textView.font = READER_FONT;
-
     self.backgroundView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background7.jpeg"]];
     
     self.textView.backgroundColor = [UIColor clearColor];
+}
+
+- (void)switchFont
+{
+    self.textView.font = [[NSUserDefaults standardUserDefaults] boolForKey:@"DXUserDefaultsUseDyslexicMode"] ? [UIFont fontWithName:@"OpenDyslexic-Regular" size:16.0f] : [UIFont systemFontOfSize:18.0f];
 }
 
 - (void)viewDidUnload
@@ -54,6 +57,8 @@ const float PAGINATION_FONT_SIZE = 16.0f;
     [super viewWillAppear:animated];
     self.dataLabel.text = [self.dataObject pageTitle];
     self.textView.text = [self.dataObject pageText];
+    self.textView.font = [[NSUserDefaults standardUserDefaults] boolForKey:@"DXUserDefaultsUseDyslexicMode"] ? [UIFont fontWithName:@"OpenDyslexic-Regular" size:16.0f] : [UIFont systemFontOfSize:18.0f];
+
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
