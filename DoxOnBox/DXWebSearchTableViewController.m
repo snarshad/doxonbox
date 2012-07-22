@@ -185,7 +185,7 @@
             }
             
             NSLog(@"tv: %@", self.tableView);
-            [self.tableView reloadData];
+            [self.searchDisplayController.searchResultsTableView reloadData];
         });
     });
 
