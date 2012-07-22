@@ -54,8 +54,12 @@
 {
     NSURL *url = [NSURL URLWithString:self.urlString];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
-    [request setAllHTTPHeaderFields:self.requestHeaders];
 
+    if (self.requestHeaders.count > 0)
+    {
+        [request setAllHTTPHeaderFields:self.requestHeaders];
+    }
+    
     NSLog(@"Requesting: %@.  Headers: %@", self.urlString, self.requestHeaders);
     
     NSHTTPURLResponse *response = nil;

@@ -184,13 +184,15 @@
     NSLog(@"File Selected");
     [popoverController dismissPopoverAnimated:YES];
     
-    NSString *urlString = [NSString stringWithFormat:@"https://api.box.com/2.0/files/%@/data", [boxFile objectId]];
+//    NSString *urlString = [NSString stringWithFormat:@"https://api.box.com/2.0/files/%@/data", [boxFile objectId]];
 
-    NSDictionary *headers = [NSDictionary dictionaryWithObjectsAndKeys:
-                             [NSString stringWithFormat:@"BoxAuth api_key=%@&auth_token=%@", BOX_API_KEY, [BoxUser savedUser].authToken], @"Authorization: BoxAuth api_key",
-                             nil];
+    NSString *urlString = [NSString stringWithFormat:@"https://www.box.net/api/1.0/download/%@/%@", [BoxUser savedUser].authToken, [boxFile objectId]];
     
-    [self.modelController loadPageWithURLString:urlString headers:headers];
+//    NSDictionary *headers = [NSDictionary dictionaryWithObjectsAndKeys:
+//                             [NSString stringWithFormat:@"BoxAuth api_key=%@&auth_token=%@", BOX_API_KEY, [BoxUser savedUser].authToken], @"Authorization: BoxAuth api_key",
+//                             nil];
+    
+    [self.modelController loadPageWithURLString:urlString headers:nil];
     
 }
 
