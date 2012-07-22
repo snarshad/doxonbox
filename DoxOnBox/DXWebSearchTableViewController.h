@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+@protocol DXWebSearchTableViewControllerDelegate <NSObject>
+- (void)didLoadContent:(NSString *)contentString;
+@end
 
 @interface DXWebSearchTableViewController : UITableViewController
-
-
+@property (weak, readwrite) id <DXWebSearchTableViewControllerDelegate>searchTableDelegate;
 @end

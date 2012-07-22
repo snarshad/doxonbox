@@ -22,4 +22,6 @@
 
 - (void)loadPageWithURLString:(NSString *)urlString headers:(NSDictionary *)headers;
 
+- (void)loadPageWithHTMLContent:(NSString *)contentString;
+
 @end

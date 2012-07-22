@@ -226,6 +226,14 @@
     }];
 }
 
+#pragma mark DXWebSearchTableViewControllerDelegate 
+- (void)didLoadContent:(NSString *)contentString
+{
+    self.modelController.delegate = self;
+    [self.modelController loadPageWithHTMLContent:contentString];
+}
+
+
 
 #pragma mark -
 
@@ -240,7 +248,11 @@
         
         // Pass any objects to the view controller here, like...
         [vc setBoxDelegate:self];        
-    }    
+    } else if ([[segue identifier] isEqualToString:@"webSearchSegue"]) {
+        popoverController =  [(UIStoryboardPopoverSegue *)segue popoverController];
+        DXWebSearchTableViewController *vc = (DXWebSearchTableViewController *)[segue destinationViewController];
+        [vc setSearchTableDelegate:self];
+    }
 }
 
 

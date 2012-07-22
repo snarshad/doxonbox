@@ -13,6 +13,7 @@
 #import "DXNetPageContent.h"
 #import "DXRootViewController.h"
 #import "DXStringPaginator.h"
+#import "DXHTMLStripper.h"
 
 /*
  A controller object that manages a simple model -- a collection of month names.
@@ -156,6 +157,33 @@
                 NSLog(@"Failed");
             }
         }];
+    }
+}
+
+- (void)loadPageWithHTMLContent:(NSString *)contentString
+{
+    NSString *plainString = [DXHTMLStripper plainTextFromHTML:contentString];
+
+    __block CGSize pageSize;
+    UIFont *font = READER_FONT;
+    dispatch_sync(dispatch_get_main_queue(), ^{
+        pageSize = ((DXRootViewController *)self.delegate).pageViewController.view.frame.size;
+    });
+    
+    NSArray *pagesOfText = [DXStringPaginator pagesInString:plainString withFont:font frameSize:pageSize];
+    
+    for (unsigned int i = 0; i < [pagesOfText count]; i++)
+    {
+        DXPageContent *page = [[DXPageContent alloc] init];
+        page.pageText = [pagesOfText objectAtIndex:i];
+        [self.pageData insertObject:page atIndex:i];
+    }
+    
+    if ([self.delegate respondsToSelector:@selector(pageContentLoaded:atIndex:)])
+    {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.delegate pageContentLoaded:[self.pageData objectAtIndex:0] atIndex:0];
+        });
     }
     
 }

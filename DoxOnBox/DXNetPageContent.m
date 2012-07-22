@@ -35,6 +35,16 @@
     return self;
 }
 
+- (id)initWithHTMLString:(NSString *)htmlString
+{
+    if (self = [super init])
+    {
+        NSString *encodedString = [DXHTMLStripper plainTextFromHTML:htmlString];
+        self.pageText = encodedString;
+    }
+    return self;
+}
+
 - (BOOL)loadAsynchronous
 {
     if (self.loading)

@@ -74,16 +74,11 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Q40-PZ-dZi" kind="popover" popoverAnchorView="1Gc-es-g2k" id="GyB-2H-zq5">
+                                    <segue destination="Q40-PZ-dZi" kind="popover" identifier="webSearchSegue" popoverAnchorView="1Gc-es-g2k" id="GyB-2H-zq5">
                                         <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                     </segue>
                                 </connections>
                             </button>
-                            <connections>
-                                <segue destination="Q40-PZ-dZi" kind="popover" popoverAnchorBarButtonItem="lma-HW-Yg1" id="AoZ-zh-uWd">
-                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                </segue>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
@@ -232,39 +227,11 @@
     <resources>
         <image name="BoxTopBarLogo.png" width="58" height="34"/>
         <image name="linen_dark_1024.png" width="1024" height="1024"/>
-        <image name="planet.png" width="16" height="16"/>
+        <image name="planet.png" width="29" height="18"/>
     </resources>
-    <classes>
-        <class className="BLColorizedTextView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BLColorizedTextView.h"/>
-        </class>
-        <class className="BoxBrowserTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BoxBrowserTableViewController.h"/>
-        </class>
-        <class className="DXBoxBrowserTableViewController" superclassName="BoxBrowserTableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DXBoxBrowserTableViewController.h"/>
-        </class>
-        <class className="DXDataViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DXDataViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="backgroundView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="dataLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="textView" candidateClass="BLColorizedTextView"/>
-            </relationships>
-        </class>
-        <class className="DXRootViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DXRootViewController.h"/>
-        </class>
-        <class className="DXWebSearchTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DXWebSearchTableViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="GyB-2H-zq5"/>
-    </inferredMetricsTieBreakers>
 </document>
