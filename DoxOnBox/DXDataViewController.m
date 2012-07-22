@@ -8,6 +8,9 @@
 
 #import "DXDataViewController.h"
 #import "DXPageContent.h"
+#import "DXColorizedAttributedTextView.h"
+#import "NSAttributedString+DXLexicalAnalysis.h"
+#import <CoreText/CoreText.h>
 
 @interface DXDataViewController ()
 
@@ -21,6 +24,7 @@ const float PAGINATION_FONT_SIZE = 16.0f;
 @synthesize dataObject = _dataObject;
 @synthesize backgroundView;
 @synthesize textView;
+@synthesize lastTextView;
 
 - (void)viewDidLoad
 {
@@ -54,11 +58,40 @@ const float PAGINATION_FONT_SIZE = 16.0f;
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    NSMutableArray *colors = [[NSMutableArray alloc] initWithCapacity:4];
+    [colors addObject:[UIColor colorWithRed:1.0f green:0.0f blue:0.0f alpha:1.0f]];
+    [colors addObject:[UIColor colorWithRed:0.0f green:0.0f blue:0.0f alpha:1.0f]];
+    [colors addObject:[UIColor colorWithRed:0.0f green:0.0f blue:1.0f alpha:1.0f]];
+    [colors addObject:[UIColor colorWithRed:0.0f green:0.0f blue:0.0f alpha:1.0f]];
+    self.textView.colors = colors;
+    self.textView.lineBreakMode = UILineBreakModeWordWrap;
+    
+    self.textView.backgroundColor = [UIColor clearColor];
+
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"DXUserDefaultsUseLexicalColoring"])
+    {
+        self.lastTextView = self.textView;
+        UIView *superview = [self.lastTextView superview];
+        [self.lastTextView removeFromSuperview];
+        self.textView = [[DXColorizedAttributedTextView alloc] initWithFrame:self.textView.frame];
+        NSMutableAttributedString *str = [NSAttributedString lexicallyHighlightedStringForString:[self.dataObject pageText]];
+        UIFont *font = [[NSUserDefaults standardUserDefaults] boolForKey:@"DXUserDefaultsUseDyslexicMode"] ? [UIFont fontWithName:@"OpenDyslexic-Regular" size:16.0f] : [UIFont systemFontOfSize:18.0f];
+        CTFontRef ctfont = CTFontCreateWithName((__bridge CFStringRef)font.fontName, font.pointSize, NULL);
+        [str addAttribute:(NSString *)kCTFontAttributeName value:(__bridge UIFont *)ctfont range:NSMakeRange(0, str.length)];
+        ((DXColorizedAttributedTextView *)self.textView).attributedText = str;
+        [superview addSubview:textView];
+        
+    }
+    else
+    {
+        self.textView = self.lastTextView ? self.lastTextView : self.textView;
+    }
+    [self switchFont];
     [super viewWillAppear:animated];
     self.dataLabel.text = [self.dataObject pageTitle];
     self.textView.text = [self.dataObject pageText];
-    self.textView.font = [[NSUserDefaults standardUserDefaults] boolForKey:@"DXUserDefaultsUseDyslexicMode"] ? [UIFont fontWithName:@"OpenDyslexic-Regular" size:16.0f] : [UIFont systemFontOfSize:18.0f];
 
+    
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

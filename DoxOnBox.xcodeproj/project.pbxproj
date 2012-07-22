@@ -66,6 +66,9 @@
 		BC5F944515BBBCB2000184E4 /* OpenDyslexic-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = BC5F944115BBBCB2000184E4 /* OpenDyslexic-Italic.otf */; };
 		BC5F944615BBBCB2000184E4 /* OpenDyslexic-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = BC5F944215BBBCB2000184E4 /* OpenDyslexic-Regular.otf */; };
 		BC5F944A15BBCCF3000184E4 /* DXSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC5F944915BBCCF3000184E4 /* DXSettingsViewController.m */; };
+		BC9B25BD15BC02A2001BEF6A /* NSAttributedString+DXLexicalAnalysis.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9B25BC15BC02A2001BEF6A /* NSAttributedString+DXLexicalAnalysis.m */; };
+		BC9B25C015BC072A001BEF6A /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC9B25BF15BC0729001BEF6A /* CoreText.framework */; };
+		BC9B25C315BC760B001BEF6A /* DXColorizedAttributedTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9B25C215BC760B001BEF6A /* DXColorizedAttributedTextView.m */; };
 		EF06784315BB467F007EA819 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF06784215BB467F007EA819 /* UIKit.framework */; };
 		EF06784515BB467F007EA819 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF06784415BB467F007EA819 /* Foundation.framework */; };
 		EF06784715BB467F007EA819 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF06784615BB467F007EA819 /* CoreGraphics.framework */; };
@@ -204,6 +207,11 @@
 		BC5F944215BBBCB2000184E4 /* OpenDyslexic-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenDyslexic-Regular.otf"; sourceTree = "<group>"; };
 		BC5F944815BBCCF3000184E4 /* DXSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXSettingsViewController.h; sourceTree = "<group>"; };
 		BC5F944915BBCCF3000184E4 /* DXSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXSettingsViewController.m; sourceTree = "<group>"; };
+		BC9B25BB15BC02A2001BEF6A /* NSAttributedString+DXLexicalAnalysis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+DXLexicalAnalysis.h"; sourceTree = "<group>"; };
+		BC9B25BC15BC02A2001BEF6A /* NSAttributedString+DXLexicalAnalysis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+DXLexicalAnalysis.m"; sourceTree = "<group>"; };
+		BC9B25BF15BC0729001BEF6A /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		BC9B25C115BC760B001BEF6A /* DXColorizedAttributedTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXColorizedAttributedTextView.h; sourceTree = "<group>"; };
+		BC9B25C215BC760B001BEF6A /* DXColorizedAttributedTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXColorizedAttributedTextView.m; sourceTree = "<group>"; };
 		EF06783E15BB467F007EA819 /* DoxOnBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoxOnBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF06784215BB467F007EA819 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		EF06784415BB467F007EA819 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -261,6 +269,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC9B25C015BC072A001BEF6A /* CoreText.framework in Frameworks */,
 				BC5F941615BB52F6000184E4 /* Security.framework in Frameworks */,
 				EF06788C15BB4B6C007EA819 /* libxml2.2.dylib in Frameworks */,
 				EF06787C15BB49A2007EA819 /* libz.dylib in Frameworks */,
@@ -486,6 +495,7 @@
 		EF06784115BB467F007EA819 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BC9B25BF15BC0729001BEF6A /* CoreText.framework */,
 				BC5F941515BB52F6000184E4 /* Security.framework */,
 				EF06784215BB467F007EA819 /* UIKit.framework */,
 				EF06784415BB467F007EA819 /* Foundation.framework */,
@@ -509,6 +519,8 @@
 				EF06785515BB467F007EA819 /* DXRootViewController.m */,
 				EF06785715BB467F007EA819 /* DXDataViewController.h */,
 				EF06785815BB467F007EA819 /* DXDataViewController.m */,
+				BC9B25C115BC760B001BEF6A /* DXColorizedAttributedTextView.h */,
+				BC9B25C215BC760B001BEF6A /* DXColorizedAttributedTextView.m */,
 				EF06785A15BB467F007EA819 /* DXModelController.h */,
 				EF06785B15BB467F007EA819 /* DXModelController.m */,
 				EF06785D15BB4680007EA819 /* MainStoryboard_iPhone.storyboard */,
@@ -522,6 +534,8 @@
 				EF06790815BBB899007EA819 /* DXWebSearchTableViewController.m */,
 				EF06790215BBA3CA007EA819 /* DXStringPaginator.h */,
 				EF06790315BBA3CB007EA819 /* DXStringPaginator.m */,
+				BC9B25BB15BC02A2001BEF6A /* NSAttributedString+DXLexicalAnalysis.h */,
+				BC9B25BC15BC02A2001BEF6A /* NSAttributedString+DXLexicalAnalysis.m */,
 				EF0678FF15BB9AFB007EA819 /* DXHTMLStripper.h */,
 				EF06790015BB9AFC007EA819 /* DXHTMLStripper.m */,
 			);
@@ -714,6 +728,8 @@
 				EF06790915BBB89B007EA819 /* DXWebSearchTableViewController.m in Sources */,
 				BC5F944A15BBCCF3000184E4 /* DXSettingsViewController.m in Sources */,
 				EFFD0B7C15BC83E800F42688 /* NSString+URLUtils.m in Sources */,
+				BC9B25BD15BC02A2001BEF6A /* NSAttributedString+DXLexicalAnalysis.m in Sources */,
+				BC9B25C315BC760B001BEF6A /* DXColorizedAttributedTextView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
