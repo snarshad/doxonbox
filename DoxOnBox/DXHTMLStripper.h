@@ -9,6 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface DXHTMLStripper : NSObject <UIWebViewDelegate>
-+ (NSString *)plainTextFromHTML:(NSString *)stringWithHTML;
++ (NSDictionary *)plainTextFromHTML:(NSString *)stringWithHTML;
 
 @end

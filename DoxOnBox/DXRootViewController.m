@@ -32,6 +32,7 @@
 @synthesize pageViewController = _pageViewController;
 @synthesize modelController = _modelController;
 @synthesize boxLoginController;
+@synthesize activityIndicator;
 
 
 
@@ -121,6 +122,7 @@
 
 - (void)viewDidUnload
 {
+    [self setActivityIndicator:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -231,12 +233,29 @@
 #pragma mark DXModelDelegate
 - (void)pageContentLoaded:(DXPageContent *)pageContent atIndex:(NSInteger)index
 {
+    [activityIndicator stopAnimating];
     NSLog(@"Going to flip");
     NSArray *newViewControllers = [NSArray arrayWithObject:[self.modelController viewControllerAtIndex:index storyboard:self.storyboard]];
     [self.pageViewController setViewControllers:newViewControllers direction:UIPageViewControllerNavigationDirectionReverse animated:YES completion:^(BOOL finished) {
         NSLog(@"Done flipping");
     }];
 }
+
+#pragma mark DXWebSearchTableViewControllerDelegate 
+- (void)didLoadContent:(NSString *)contentString
+{
+    self.modelController.delegate = self;
+    [[self.modelController inBackground] loadPageWithHTMLContent:contentString];
+    [popoverController dismissPopoverAnimated:YES];
+    [activityIndicator startAnimating];
+}
+
+- (void)loadingContent:(NSString *)contentURL
+{
+    [activityIndicator startAnimating];
+    [popoverController dismissPopoverAnimated:YES];
+}
+
 
 
 #pragma mark -
@@ -252,9 +271,11 @@
         
         // Pass any objects to the view controller here, like...
         [vc setBoxDelegate:self];        
-    }
-    if ([[segue identifier] isEqualToString:@"ShowSettings"])
-    {
+    } else if ([[segue identifier] isEqualToString:@"webSearchSegue"]) {
+        popoverController =  [(UIStoryboardPopoverSegue *)segue popoverController];
+        DXWebSearchTableViewController *vc = (DXWebSearchTableViewController *)[segue destinationViewController];
+        [vc setSearchTableDelegate:self];
+    } else if ([[segue identifier] isEqualToString:@"ShowSettings"]) {
         popoverController = [(UIStoryboardPopoverSegue *)segue popoverController];
         
         DXSettingsViewController * vc = (DXSettingsViewController *)[segue destinationViewController];

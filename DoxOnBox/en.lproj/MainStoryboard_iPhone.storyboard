@@ -59,6 +59,7 @@
         <class className="DXDataViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DXDataViewController.h"/>
             <relationships>
+                <relationship kind="outlet" name="backgroundView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="dataLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="textView" candidateClass="BLColorizedTextView"/>
             </relationships>

@@ -12,7 +12,7 @@ static UIWebView *g_webView = nil;
 static DXHTMLStripper * g_stripper = nil;
 
 @interface DXHTMLStripper ()
-- (NSString *)plainTextFromHTML:(NSString *)originalString;
+- (NSDictionary *)plainTextFromHTML:(NSString *)originalString;
 @end
 
 @implementation DXHTMLStripper
@@ -39,8 +39,13 @@ static DXHTMLStripper * g_stripper = nil;
     return g_stripper;
 }
 
-- (NSString *)plainTextFromHTML:(NSString *)originalString
+- (NSDictionary *)plainTextFromHTML:(NSString *)originalString
 {
+    if ([NSThread isMainThread])
+    {
+        NSLog(@"*** WARNING - there is trouble when this is on the main thread");
+    }
+
     dispatch_sync(dispatch_get_main_queue(), ^{
         if (!g_webView)
         {
@@ -55,35 +60,47 @@ static DXHTMLStripper * g_stripper = nil;
     [g_webView loadHTMLString:originalString baseURL:nil];
     
     __block NSString *text = nil;
+    __block NSString *title = nil;
 
-    if ([_webLoadLock lockWhenCondition:0 beforeDate:[NSDate dateWithTimeIntervalSinceNow:10]])
+    NSLog(@"Locking When 0.");
+    if ([_webLoadLock lockWhenCondition:0 beforeDate:[NSDate dateWithTimeIntervalSinceNow:20]])
     {
-        dispatch_sync(dispatch_get_main_queue(), ^{
-        text = [g_webView stringByEvaluatingJavaScriptFromString:@"document.body.innerText"];
-        });
+        NSLog(@"Locked When 0.");
+            dispatch_sync(dispatch_get_main_queue(), ^{
+//                title = [g_webView stringByEvaluatingJavaScriptFromString:@"document.title"];
+                text = [g_webView stringByEvaluatingJavaScriptFromString:@"document.body.innerText"];
+                NSLog(@"2. title: %@", title);
+            });
         [_webLoadLock unlock];
     } else {
-        dispatch_sync(dispatch_get_main_queue(), ^{
-            text = [g_webView stringByEvaluatingJavaScriptFromString:@"document.body.innerText"];
-        });
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                text = [g_webView stringByEvaluatingJavaScriptFromString:@"document.body.innerText"];
+                //            title = [g_webView stringByEvaluatingJavaScriptFromString:@"document.title"];
+                NSLog(@"4.  title: %@", title);
+            });
     }
     
-    return text;
+    return [NSDictionary dictionaryWithObjectsAndKeys:
+            title ? title : @"HTML Document", @"title",
+            text ? text : @"", @"body",
+            nil];
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
+    NSLog(@"Finished Load");
     [_webLoadLock lock];
     [_webLoadLock unlockWithCondition:0];    
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
 {
+    NSLog(@"Error Load");
     [_webLoadLock lock];
     [_webLoadLock unlockWithCondition:0];
 }
 
-+ (NSString *)plainTextFromHTML:(NSString *)stringWithHTML
++ (NSDictionary *)plainTextFromHTML:(NSString *)stringWithHTML
 {
     return [[DXHTMLStripper sharedStripper] plainTextFromHTML:stringWithHTML];
 }

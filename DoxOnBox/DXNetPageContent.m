@@ -35,6 +35,17 @@
     return self;
 }
 
+- (id)initWithHTMLString:(NSString *)htmlString
+{
+    if (self = [super init])
+    {
+        NSDictionary *content = [DXHTMLStripper plainTextFromHTML:htmlString];
+        self.pageText = [content valueForKey:@"body"];
+        self.pageTitle = [content valueForKey:@"title"];
+    }
+    return self;
+}
+
 - (BOOL)loadAsynchronous
 {
     if (self.loading)
@@ -88,6 +99,9 @@
             
             NSString *encodedString =[[NSString alloc] initWithData:self.data
                                                            encoding:encoding];
+            self.pageText = encodedString;
+            self.pageTitle = [[self.urlString lastPathComponent] stringByDeletingPathExtension];
+            
             if ([[response.allHeaderFields allKeys] containsObject:@"Content-Type"])
             {
                 NSString *contentType = [response.allHeaderFields valueForKey:@"Content-Type"];
@@ -95,13 +109,11 @@
                 
                 if ([contentType rangeOfString:@"text/html"].location != NSNotFound)
                 {
-                    encodedString = [DXHTMLStripper plainTextFromHTML:encodedString];
-                }
-                
-                NSLog(@"Detected encoding %d from %@", encoding, contentType); 
+                    NSDictionary *content = [DXHTMLStripper plainTextFromHTML:encodedString];
+                    self.pageText = [content valueForKey:@"body"];
+                    self.pageTitle = [content valueForKey:@"title"];
+                }                         
             }
-                
-            self.pageText = encodedString;
         }                
         
     }

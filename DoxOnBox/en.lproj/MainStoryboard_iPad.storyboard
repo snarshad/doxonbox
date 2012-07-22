@@ -52,6 +52,10 @@
                                     </segue>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" style="whiteLarge" id="iWT-Km-GfS">
+                                <rect key="frame" x="720" y="0.0" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
                     </view>
@@ -91,19 +95,17 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Q40-PZ-dZi" kind="popover" popoverAnchorView="1Gc-es-g2k" id="GyB-2H-zq5">
+                                    <segue destination="Q40-PZ-dZi" kind="popover" identifier="webSearchSegue" popoverAnchorView="1Gc-es-g2k" id="GyB-2H-zq5">
                                         <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                     </segue>
                                 </connections>
                             </button>
-                            <connections>
-                                <segue destination="Q40-PZ-dZi" kind="popover" popoverAnchorBarButtonItem="lma-HW-Yg1" id="AoZ-zh-uWd">
-                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                </segue>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="iWT-Km-GfS" id="ukv-Bd-p0m"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="-867" y="-1175"/>
@@ -372,6 +374,9 @@
         </class>
         <class className="DXRootViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DXRootViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
+            </relationships>
         </class>
         <class className="DXSettingsViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DXSettingsViewController.h"/>
@@ -390,7 +395,4 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="AoZ-zh-uWd"/>
-    </inferredMetricsTieBreakers>
 </document>
