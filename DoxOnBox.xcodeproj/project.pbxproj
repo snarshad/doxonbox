@@ -65,6 +65,7 @@
 		BC5F944415BBBCB2000184E4 /* OpenDyslexic-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = BC5F944015BBBCB2000184E4 /* OpenDyslexic-BoldItalic.otf */; };
 		BC5F944515BBBCB2000184E4 /* OpenDyslexic-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = BC5F944115BBBCB2000184E4 /* OpenDyslexic-Italic.otf */; };
 		BC5F944615BBBCB2000184E4 /* OpenDyslexic-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = BC5F944215BBBCB2000184E4 /* OpenDyslexic-Regular.otf */; };
+		BC5F944A15BBCCF3000184E4 /* DXSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC5F944915BBCCF3000184E4 /* DXSettingsViewController.m */; };
 		EF06784315BB467F007EA819 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF06784215BB467F007EA819 /* UIKit.framework */; };
 		EF06784515BB467F007EA819 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF06784415BB467F007EA819 /* Foundation.framework */; };
 		EF06784715BB467F007EA819 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF06784615BB467F007EA819 /* CoreGraphics.framework */; };
@@ -200,6 +201,8 @@
 		BC5F944015BBBCB2000184E4 /* OpenDyslexic-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenDyslexic-BoldItalic.otf"; sourceTree = "<group>"; };
 		BC5F944115BBBCB2000184E4 /* OpenDyslexic-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenDyslexic-Italic.otf"; sourceTree = "<group>"; };
 		BC5F944215BBBCB2000184E4 /* OpenDyslexic-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenDyslexic-Regular.otf"; sourceTree = "<group>"; };
+		BC5F944815BBCCF3000184E4 /* DXSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXSettingsViewController.h; sourceTree = "<group>"; };
+		BC5F944915BBCCF3000184E4 /* DXSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXSettingsViewController.m; sourceTree = "<group>"; };
 		EF06783E15BB467F007EA819 /* DoxOnBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoxOnBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF06784215BB467F007EA819 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		EF06784415BB467F007EA819 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -507,6 +510,8 @@
 				EF06785B15BB467F007EA819 /* DXModelController.m */,
 				EF06785D15BB4680007EA819 /* MainStoryboard_iPhone.storyboard */,
 				EF06786015BB4680007EA819 /* MainStoryboard_iPad.storyboard */,
+				BC5F944815BBCCF3000184E4 /* DXSettingsViewController.h */,
+				BC5F944915BBCCF3000184E4 /* DXSettingsViewController.m */,
 				EF06784915BB467F007EA819 /* Supporting Files */,
 				EF0678B215BB60E2007EA819 /* DXBoxBrowserTableViewController.h */,
 				EF0678B315BB60E2007EA819 /* DXBoxBrowserTableViewController.m */,
@@ -702,6 +707,7 @@
 				EF06790115BB9AFD007EA819 /* DXHTMLStripper.m in Sources */,
 				EF06790415BBA3CC007EA819 /* DXStringPaginator.m in Sources */,
 				EF06790915BBB89B007EA819 /* DXWebSearchTableViewController.m in Sources */,
+				BC5F944A15BBCCF3000184E4 /* DXSettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

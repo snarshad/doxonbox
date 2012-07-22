@@ -17,6 +17,7 @@
 #import "DXBoxBrowserTableViewController.h"
 #import "BoxAPIKey.h"
 #import "BoxUser.h"
+#import "DXSettingsViewController.h"
 
 
 @interface DXRootViewController ()
@@ -216,6 +217,17 @@
     [self.modelController loadPageWithURLString:urlString headers:nil];
     
 }
+
+#pragma mark DXSettingsDelegate
+- (void)logOut:(DXSettingsViewController *)sender
+{
+    [BoxUser clearSavedUser];
+    [self.pageViewController.view removeFromSuperview];
+    [self.pageViewController removeFromParentViewController];
+    [self openLoginView];
+    [popoverController dismissPopoverAnimated:YES];
+}
+
 #pragma mark DXModelDelegate
 - (void)pageContentLoaded:(DXPageContent *)pageContent atIndex:(NSInteger)index
 {
@@ -240,7 +252,14 @@
         
         // Pass any objects to the view controller here, like...
         [vc setBoxDelegate:self];        
-    }    
+    }
+    if ([[segue identifier] isEqualToString:@"ShowSettings"])
+    {
+        popoverController = [(UIStoryboardPopoverSegue *)segue popoverController];
+        
+        DXSettingsViewController * vc = (DXSettingsViewController *)[segue destinationViewController];
+        [vc setPopoverDelegate:self];
+    }
 }
 
 

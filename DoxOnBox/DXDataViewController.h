@@ -10,7 +10,8 @@
 #import "BLColorizedTextView.h"
 
 extern const float PAGINATION_FONT_SIZE;
-#define READER_FONT [UIFont fontWithName:@"OpenDyslexic-Regular" size:16.0f]
+//#define READER_FONT [UIFont fontWithName:@"OpenDyslexic-Regular" size:16.0f]
+#define READER_FONT [UIFont systemFontOfSize:18.0f]
 
 @interface DXDataViewController : UIViewController
 
