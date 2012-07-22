@@ -40,7 +40,7 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="iON-rS-DQY">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="P95-UG-v2I">
+                        <barButtonItem key="leftBarButtonItem" id="P95-UG-v2I">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="dGp-Xi-n1K">
                                 <rect key="frame" x="7" y="3" width="152" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>

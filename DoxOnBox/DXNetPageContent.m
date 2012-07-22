@@ -9,6 +9,7 @@
 #import "DXNetPageContent.h"
 #import "NSString+stripHtml.h"
 #import "NSString+ContentEncoding.h"
+#import "DXStringPaginator.h"
 
 @interface DXNetPageContent ()
 - (BOOL)loadAsynchronous;
@@ -98,11 +99,16 @@
                 }
                 
                 NSLog(@"Detected encoding %d from %@", encoding, contentType); 
-                
             }
                 
             self.pageText = encodedString;
         }        
+        NSArray *sentences = [DXStringPaginator sentencesInString:self.pageText];
+        for (NSString *sentence in sentences)
+        {
+            NSLog(@"** %@\r\n", sentence);
+        }
+        
     }
     return self.loaded;
 }
