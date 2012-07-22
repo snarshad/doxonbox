@@ -17,6 +17,7 @@
 
 @synthesize dataLabel = _dataLabel;
 @synthesize dataObject = _dataObject;
+@synthesize backgroundView;
 @synthesize textView;
 
 - (void)viewDidLoad
@@ -31,8 +32,11 @@
     self.textView.colors = colors;
     self.textView.lineBreakMode = UILineBreakModeWordWrap;
     
-    self.textView.font = [UIFont systemFontOfSize:16.0f];
+    self.textView.font = [UIFont systemFontOfSize:18.0f];
 
+    self.backgroundView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background7.jpeg"]];
+    
+    self.textView.backgroundColor = [UIColor clearColor];
 }
 
 - (void)viewDidUnload

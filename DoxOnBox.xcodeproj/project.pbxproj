@@ -82,6 +82,11 @@
 		EF0678B415BB60E2007EA819 /* DXBoxBrowserTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF0678B315BB60E2007EA819 /* DXBoxBrowserTableViewController.m */; };
 		EF0678C215BB75C1007EA819 /* DXNetPageContent.m in Sources */ = {isa = PBXBuildFile; fileRef = EF0678C115BB75C0007EA819 /* DXNetPageContent.m */; };
 		EF0678C515BB782E007EA819 /* NSObject+SPInvocationGrabbing.m in Sources */ = {isa = PBXBuildFile; fileRef = EF0678C415BB782E007EA819 /* NSObject+SPInvocationGrabbing.m */; };
+		EF0678DA15BB8E53007EA819 /* linen_dark_1024.png in Resources */ = {isa = PBXBuildFile; fileRef = EF0678D915BB8E53007EA819 /* linen_dark_1024.png */; };
+		EF0678DC15BB8EC6007EA819 /* paper-wallpaper.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = EF0678DB15BB8EC6007EA819 /* paper-wallpaper.jpeg */; };
+		EF0678DE15BB9026007EA819 /* background7.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = EF0678DD15BB9026007EA819 /* background7.jpeg */; };
+		EF0678FB15BB90F2007EA819 /* NSString+stripHtml.m in Sources */ = {isa = PBXBuildFile; fileRef = EF0678FA15BB90F2007EA819 /* NSString+stripHtml.m */; };
+		EF0678FE15BB922E007EA819 /* NSString+ContentEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = EF0678FD15BB922E007EA819 /* NSString+ContentEncoding.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -222,6 +227,13 @@
 		EF0678C115BB75C0007EA819 /* DXNetPageContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXNetPageContent.m; sourceTree = "<group>"; };
 		EF0678C315BB782E007EA819 /* NSObject+SPInvocationGrabbing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SPInvocationGrabbing.h"; sourceTree = "<group>"; };
 		EF0678C415BB782E007EA819 /* NSObject+SPInvocationGrabbing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SPInvocationGrabbing.m"; sourceTree = "<group>"; };
+		EF0678D915BB8E53007EA819 /* linen_dark_1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = linen_dark_1024.png; sourceTree = "<group>"; };
+		EF0678DB15BB8EC6007EA819 /* paper-wallpaper.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "paper-wallpaper.jpeg"; path = "DoxOnBox/paper-wallpaper.jpeg"; sourceTree = "<group>"; };
+		EF0678DD15BB9026007EA819 /* background7.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = background7.jpeg; path = DoxOnBox/background7.jpeg; sourceTree = "<group>"; };
+		EF0678F915BB90F1007EA819 /* NSString+stripHtml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+stripHtml.h"; path = "../../CQ/client/donna/donna/Categories/NSString+stripHtml.h"; sourceTree = "<group>"; };
+		EF0678FA15BB90F2007EA819 /* NSString+stripHtml.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+stripHtml.m"; path = "../../CQ/client/donna/donna/Categories/NSString+stripHtml.m"; sourceTree = "<group>"; };
+		EF0678FC15BB922D007EA819 /* NSString+ContentEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ContentEncoding.h"; sourceTree = "<group>"; };
+		EF0678FD15BB922E007EA819 /* NSString+ContentEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ContentEncoding.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -430,6 +442,7 @@
 		EF06783315BB467F007EA819 = {
 			isa = PBXGroup;
 			children = (
+				EF0678D815BB8E35007EA819 /* images */,
 				EF0678C315BB782E007EA819 /* NSObject+SPInvocationGrabbing.h */,
 				EF0678C415BB782E007EA819 /* NSObject+SPInvocationGrabbing.m */,
 				EF06788B15BB4B6C007EA819 /* libxml2.2.dylib */,
@@ -464,10 +477,14 @@
 		EF06784815BB467F007EA819 /* DoxOnBox */ = {
 			isa = PBXGroup;
 			children = (
+				EF0678F915BB90F1007EA819 /* NSString+stripHtml.h */,
+				EF0678FA15BB90F2007EA819 /* NSString+stripHtml.m */,
 				EF06788D15BB50C5007EA819 /* DXPageContent.h */,
 				EF06788E15BB50C5007EA819 /* DXPageContent.m */,
 				EF0678C015BB75C0007EA819 /* DXNetPageContent.h */,
 				EF0678C115BB75C0007EA819 /* DXNetPageContent.m */,
+				EF0678FC15BB922D007EA819 /* NSString+ContentEncoding.h */,
+				EF0678FD15BB922E007EA819 /* NSString+ContentEncoding.m */,
 				EF06785115BB467F007EA819 /* DXAppDelegate.h */,
 				EF06785215BB467F007EA819 /* DXAppDelegate.m */,
 				EF06785415BB467F007EA819 /* DXRootViewController.h */,
@@ -510,6 +527,16 @@
 				EF06788615BB4B4F007EA819 /* GDataXMLNode.m */,
 			);
 			path = BeeLine;
+			sourceTree = "<group>";
+		};
+		EF0678D815BB8E35007EA819 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				EF0678DD15BB9026007EA819 /* background7.jpeg */,
+				EF0678DB15BB8EC6007EA819 /* paper-wallpaper.jpeg */,
+				EF0678D915BB8E53007EA819 /* linen_dark_1024.png */,
+			);
+			name = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -576,6 +603,9 @@
 				EF06785F15BB4680007EA819 /* MainStoryboard_iPhone.storyboard in Resources */,
 				EF06786215BB4680007EA819 /* MainStoryboard_iPad.storyboard in Resources */,
 				BC5F940A15BB518F000184E4 /* README.md in Resources */,
+				EF0678DA15BB8E53007EA819 /* linen_dark_1024.png in Resources */,
+				EF0678DC15BB8EC6007EA819 /* paper-wallpaper.jpeg in Resources */,
+				EF0678DE15BB9026007EA819 /* background7.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -642,6 +672,8 @@
 				EF0678B415BB60E2007EA819 /* DXBoxBrowserTableViewController.m in Sources */,
 				EF0678C215BB75C1007EA819 /* DXNetPageContent.m in Sources */,
 				EF0678C515BB782E007EA819 /* NSObject+SPInvocationGrabbing.m in Sources */,
+				EF0678FB15BB90F2007EA819 /* NSString+stripHtml.m in Sources */,
+				EF0678FE15BB922E007EA819 /* NSString+ContentEncoding.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

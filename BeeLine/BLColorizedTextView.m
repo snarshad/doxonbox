@@ -15,7 +15,7 @@
 
 - (void)commonInit
 {
-    self.backgroundColor = [UIColor whiteColor];
+    self.backgroundColor = [UIColor clearColor];
     self.font = [UIFont boldSystemFontOfSize:18];
     
     

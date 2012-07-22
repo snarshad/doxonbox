@@ -13,6 +13,7 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *dataLabel;
 @property (strong, nonatomic) IBOutlet BLColorizedTextView *textView;
+@property (strong, nonatomic) IBOutlet UIView *backgroundView;
 @property (strong, nonatomic) id dataObject;
 
 @end

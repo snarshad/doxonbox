@@ -7,6 +7,8 @@
 //
 
 #import "DXNetPageContent.h"
+#import "NSString+stripHtml.h"
+#import "NSString+ContentEncoding.h"
 
 @interface DXNetPageContent ()
 - (BOOL)loadAsynchronous;
@@ -45,7 +47,6 @@
     }
 
     [NSThread detachNewThreadSelector:@selector(loadSynchronous) toTarget:self withObject:nil];
-//    [[self inBackground] loadSynchronous];
     
     return YES;
 }
@@ -82,8 +83,25 @@
         @synchronized (self)
         {
             self.loaded = YES;
-            self.pageText = [[NSString alloc] initWithData:self.data
-                                                  encoding:NSUTF8StringEncoding];
+            NSStringEncoding encoding = NSUTF8StringEncoding;
+            
+            NSString *encodedString =[[NSString alloc] initWithData:self.data
+                                                           encoding:encoding];
+            if ([[response.allHeaderFields allKeys] containsObject:@"Content-Type"])
+            {
+                NSString *contentType = [response.allHeaderFields valueForKey:@"Content-Type"];
+                encoding = [NSString stringEncodingFromContentType:contentType];
+                
+                if ([contentType rangeOfString:@"text/html"].location != NSNotFound)
+                {
+                    encodedString = [encodedString stripHtml];
+                }
+                
+                NSLog(@"Detected encoding %d from %@", encoding, contentType); 
+                
+            }
+                
+            self.pageText = encodedString;
         }        
     }
     return self.loaded;
