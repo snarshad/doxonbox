@@ -44,6 +44,7 @@ const float PAGINATION_FONT_SIZE = 16.0f;
     
     self.lexicalTextView = [[DXColorizedAttributedTextView alloc] initWithFrame:self.textView.frame];
     self.lexicalTextView.autoresizingMask = self.textView.autoresizingMask;
+    self.lexicalTextView.colors = colors;
     [self.textView.superview addSubview:self.lexicalTextView];
     [self switchLexical];
 }
