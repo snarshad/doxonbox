@@ -97,8 +97,8 @@
 //    UIBarButtonItem* boxItem = [[UIBarButtonItem alloc] initWithTitle:@"Box" style:UIBarButtonItemStyleBordered target:self action:@selector(showBoxFiles)] ;
 //    self.navigationItem.leftBarButtonItem = boxItem;
 
-    UIBarButtonItem* geoItem = [[UIBarButtonItem alloc] initWithTitle:@"Geo" style:UIBarButtonItemStyleBordered target:self action:@selector(showGeo)] ;
-    self.navigationItem.rightBarButtonItem = geoItem;
+//    UIBarButtonItem* geoItem = [[UIBarButtonItem alloc] initWithTitle:@"Geo" style:UIBarButtonItemStyleBordered target:self action:@selector(showGeo)] ;
+//    self.navigationItem.rightBarButtonItem = geoItem;
     
 
     [self openLoginView];

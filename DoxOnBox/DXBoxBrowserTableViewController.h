@@ -16,5 +16,5 @@
 @interface DXBoxBrowserTableViewController : BoxBrowserTableViewController
 
 @property (weak) id<DXBoxBrowserTableViewControllerDelegate>boxDelegate;
-@property (weak) IBOutlet UIPopoverController *popoverController;
+@property (weak) UIPopoverController *popoverController;
 @end

@@ -91,6 +91,8 @@
 		EF0678FE15BB922E007EA819 /* NSString+ContentEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = EF0678FD15BB922E007EA819 /* NSString+ContentEncoding.m */; };
 		EF06790115BB9AFD007EA819 /* DXHTMLStripper.m in Sources */ = {isa = PBXBuildFile; fileRef = EF06790015BB9AFC007EA819 /* DXHTMLStripper.m */; };
 		EF06790415BBA3CC007EA819 /* DXStringPaginator.m in Sources */ = {isa = PBXBuildFile; fileRef = EF06790315BBA3CB007EA819 /* DXStringPaginator.m */; };
+		EF06790615BBB496007EA819 /* planet.png in Resources */ = {isa = PBXBuildFile; fileRef = EF06790515BBB496007EA819 /* planet.png */; };
+		EF06790915BBB89B007EA819 /* DXWebSearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF06790815BBB899007EA819 /* DXWebSearchTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -243,6 +245,9 @@
 		EF06790015BB9AFC007EA819 /* DXHTMLStripper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXHTMLStripper.m; sourceTree = "<group>"; };
 		EF06790215BBA3CA007EA819 /* DXStringPaginator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXStringPaginator.h; sourceTree = "<group>"; };
 		EF06790315BBA3CB007EA819 /* DXStringPaginator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXStringPaginator.m; sourceTree = "<group>"; };
+		EF06790515BBB496007EA819 /* planet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = planet.png; path = DoxOnBox/planet.png; sourceTree = "<group>"; };
+		EF06790715BBB898007EA819 /* DXWebSearchTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXWebSearchTableViewController.h; sourceTree = "<group>"; };
+		EF06790815BBB899007EA819 /* DXWebSearchTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXWebSearchTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -505,6 +510,8 @@
 				EF06784915BB467F007EA819 /* Supporting Files */,
 				EF0678B215BB60E2007EA819 /* DXBoxBrowserTableViewController.h */,
 				EF0678B315BB60E2007EA819 /* DXBoxBrowserTableViewController.m */,
+				EF06790715BBB898007EA819 /* DXWebSearchTableViewController.h */,
+				EF06790815BBB899007EA819 /* DXWebSearchTableViewController.m */,
 				EF06790215BBA3CA007EA819 /* DXStringPaginator.h */,
 				EF06790315BBA3CB007EA819 /* DXStringPaginator.m */,
 				EF0678FF15BB9AFB007EA819 /* DXHTMLStripper.h */,
@@ -547,6 +554,7 @@
 				BC5F944015BBBCB2000184E4 /* OpenDyslexic-BoldItalic.otf */,
 				BC5F944115BBBCB2000184E4 /* OpenDyslexic-Italic.otf */,
 				BC5F944215BBBCB2000184E4 /* OpenDyslexic-Regular.otf */,
+				EF06790515BBB496007EA819 /* planet.png */,
 				EF0678DD15BB9026007EA819 /* background7.jpeg */,
 				EF0678D915BB8E53007EA819 /* linen_dark_1024.png */,
 			);
@@ -623,6 +631,7 @@
 				BC5F944415BBBCB2000184E4 /* OpenDyslexic-BoldItalic.otf in Resources */,
 				BC5F944515BBBCB2000184E4 /* OpenDyslexic-Italic.otf in Resources */,
 				BC5F944615BBBCB2000184E4 /* OpenDyslexic-Regular.otf in Resources */,
+				EF06790615BBB496007EA819 /* planet.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -692,6 +701,7 @@
 				EF0678FE15BB922E007EA819 /* NSString+ContentEncoding.m in Sources */,
 				EF06790115BB9AFD007EA819 /* DXHTMLStripper.m in Sources */,
 				EF06790415BBA3CC007EA819 /* DXStringPaginator.m in Sources */,
+				EF06790915BBB89B007EA819 /* DXWebSearchTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -60,6 +60,31 @@
                                 </connections>
                             </button>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="planet.png" id="lma-HW-Yg1">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="1Gc-es-g2k">
+                                <rect key="frame" x="711" y="3" width="50" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                <size key="titleShadowOffset" width="2" height="2"/>
+                                <state key="normal" image="planet.png">
+                                    <color key="titleColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Q40-PZ-dZi" kind="popover" popoverAnchorView="1Gc-es-g2k" id="GyB-2H-zq5">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                            <connections>
+                                <segue destination="Q40-PZ-dZi" kind="popover" popoverAnchorBarButtonItem="lma-HW-Yg1" id="AoZ-zh-uWd">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
@@ -153,10 +178,61 @@
             </objects>
             <point key="canvasLocation" x="131" y="-1167"/>
         </scene>
+        <!--Web Search Table View Controller - Web Search-->
+        <scene sceneID="dMp-Sg-EaU">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e5J-SX-sLY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController title="Web Search" id="Q40-PZ-dZi" customClass="DXWebSearchTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="0eV-EV-v59">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1004"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Enter URL or Wikipedia Search Term" id="jz6-Mw-Ex9">
+                            <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="URL"/>
+                            <connections>
+                                <outlet property="delegate" destination="Q40-PZ-dZi" id="9s3-lM-Asg"/>
+                            </connections>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="webSearchCell" id="82t-UW-tDA">
+                                <rect key="frame" x="0.0" y="66" width="768" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Q40-PZ-dZi" id="enT-xw-7Ks"/>
+                            <outlet property="delegate" destination="Q40-PZ-dZi" id="kGL-hL-Y4E"/>
+                        </connections>
+                    </tableView>
+                    <value key="contentSizeForViewInPopover" type="size" width="500" height="800"/>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="SRa-rJ-FpE" id="ZlO-Of-q9P"/>
+                    </connections>
+                </tableViewController>
+                <searchDisplayController id="SRa-rJ-FpE">
+                    <connections>
+                        <outlet property="delegate" destination="Q40-PZ-dZi" id="qmP-a4-VgH"/>
+                        <outlet property="searchBar" destination="jz6-Mw-Ex9" id="pES-cA-fmF"/>
+                        <outlet property="searchContentsController" destination="Q40-PZ-dZi" id="JVf-C0-0jQ"/>
+                        <outlet property="searchResultsDataSource" destination="Q40-PZ-dZi" id="ajR-vC-K2B"/>
+                        <outlet property="searchResultsDelegate" destination="Q40-PZ-dZi" id="tQA-OS-ykD"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="-895" y="132"/>
+        </scene>
     </scenes>
     <resources>
         <image name="BoxTopBarLogo.png" width="58" height="34"/>
         <image name="linen_dark_1024.png" width="1024" height="1024"/>
+        <image name="planet.png" width="16" height="16"/>
     </resources>
     <classes>
         <class className="BLColorizedTextView" superclassName="UIView">
@@ -167,9 +243,6 @@
         </class>
         <class className="DXBoxBrowserTableViewController" superclassName="BoxBrowserTableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DXBoxBrowserTableViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="popoverController" candidateClass="UIPopoverController"/>
-            </relationships>
         </class>
         <class className="DXDataViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DXDataViewController.h"/>
@@ -182,10 +255,16 @@
         <class className="DXRootViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DXRootViewController.h"/>
         </class>
+        <class className="DXWebSearchTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DXWebSearchTableViewController.h"/>
+        </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="GyB-2H-zq5"/>
+    </inferredMetricsTieBreakers>
 </document>
